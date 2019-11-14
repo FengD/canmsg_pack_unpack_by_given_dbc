@@ -6,26 +6,42 @@
 #include <algorithm>
 #include <functional>
 
+/*=======================================================================*
+ * Fixed width word size data types:                                     *
+ *   int8_T, int16_T, int32_T     - signed 8, 16, or 32 bit integers     *
+ *   uint8_T, uint16_T, uint32_T  - unsigned 8, 16, or 32 bit integers   *
+ *   real32_T, real64_T           - 32 and 64 bit floating point numbers *
+ *=======================================================================*/
+typedef signed char int8_T;
+typedef unsigned char uint8_T;
+typedef short int16_T;
+typedef unsigned short uint16_T;
+typedef int int32_T;
+typedef unsigned int uint32_T;
+typedef long int64_T;
+typedef unsigned long uint64_T;
+typedef float real32_T;
+typedef double real64_T;
 
 struct signal {
 	std::string name;
-	int start_position;
+	int startBit;
 	int length;
 	float factor;
 	float offset;
-	float max_value;
-	float min_value;
-	int type;
+	float maximum;
+	float minimum;
+	int dataType;
 	int is_unsigned;
 	std::string unit;
 
 	bool operator <(const signal& s) const // 升序排序时必须写的函数
   {
-      return start_position < s.start_position;
+      return startBit < s.startBit;
   }
   bool operator >(const signal& s) const // 降序排序时必须写的函数
   {
-      return start_position > s.start_position;
+      return startBit > s.startBit;
   }
 };
 

@@ -68,9 +68,9 @@ void DbcAnalysis::getPosInfoTypeUnsignedFromStr(std::string str, signal &s) {
   str.replace(str.find("@"), 1, " ");
   std::vector<std::string> strSplited;
   split(str, " ", &strSplited);
-  s.start_position = atoi(strSplited.front().c_str());
+  s.startBit = atoi(strSplited.front().c_str());
   s.length = atoi(strSplited.at(1).c_str());
-  s.type = atoi(strSplited.back().c_str());
+  s.dataType = atoi(strSplited.back().c_str());
 }
 
 void DbcAnalysis::getFactorOffsetFromStr(std::string str, signal &s) {
@@ -87,8 +87,8 @@ void DbcAnalysis::getMaxMinFromStr(std::string str, signal &s) {
   str.erase(std::remove(str.begin(), str.end(), ']'), str.end());
   std::vector<std::string> strSplited;
   split(str, "|", &strSplited);
-  s.max_value = atof(strSplited.back().c_str());
-  s.min_value = atof(strSplited.front().c_str());
+  s.maximum = atof(strSplited.back().c_str());
+  s.minimum = atof(strSplited.front().c_str());
 }
 
 void DbcAnalysis::getUnitFromStr(std::string str, signal &s) {
@@ -144,11 +144,11 @@ void DbcAnalysis::printMessages() {
     std::cout << "  nb of signals: " << m->second.signals.size() << std::endl;
     for(std::vector<signal>::const_iterator s = m->second.signals.begin(); s != m->second.signals.end(); s++) {
       std::cout << "    name: " << s->name << std::endl;
-      std::cout << "    (start_position, length): (" << s->start_position << ", " << s->length << ")" << std::endl;
+      std::cout << "    (startBit, length): (" << s->startBit << ", " << s->length << ")" << std::endl;
       std::cout << "    (factor, offset): (" << s->factor << ", " << s->offset << ")" << std::endl;
-      std::cout << "    (min_value, max_value): (" << s->min_value << ", " << s->max_value << ")" << std::endl;
+      std::cout << "    (minimum, maximum): (" << s->minimum << ", " << s->maximum << ")" << std::endl;
       // 关于起始位置，和Intel格式或者是Motorola格式是有关的，如果是Intel格式，起始位通常是0
-      std::cout << "    type: " << s->type << " (motolora: 0, intel: 1)" << std::endl;
+      std::cout << "    dataType: " << s->dataType << " (motolora: 0 <LITTLEENDIAN>, intel: 1 <BIGENDIAN>)" << std::endl;
       std::cout << "    unsigned: " << s->is_unsigned << " (unsigned: 1, signed: 0)" << std::endl;
       std::cout << "    unit: " << s->unit << std::endl;
       std::cout << std::endl;
