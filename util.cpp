@@ -1,3 +1,11 @@
+/**
+* Copyright (C) 2019 Hirain Technologies
+* License: Modified BSD Software License Agreement
+* Author: Feng DING
+* Description:
+*/
+
+#include "util.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -7,8 +15,8 @@
 #include <string.h>
 #include <math.h>
 
-void split(const std::string &s, const std::string &seperator, std::vector<std::string> result) {
-  result.clear();
+void split(const std::string &s, const std::string &seperator, std::vector<std::string> *result) {
+  result->clear();
   typedef std::string::size_type string_size;
   string_size i = 0;
 
@@ -36,7 +44,7 @@ void split(const std::string &s, const std::string &seperator, std::vector<std::
           ++j;
     }
     if(i != j){
-      result.push_back(s.substr(i, j-i));
+      result->push_back(s.substr(i, j-i));
       i = j;
     }
   }

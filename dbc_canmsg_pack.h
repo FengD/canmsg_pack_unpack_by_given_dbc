@@ -1,5 +1,12 @@
+/**
+* Copyright (C) 2019 Hirain Technologies
+* License: Modified BSD Software License Agreement
+* Author: Feng DING
+* Description:
+*/
+
 #ifndef _DBC_CANMSG_PACK_H_
-#define _DBC_CANMSG_PACK_H_ 1
+#define _DBC_CANMSG_PACK_H_
 
 #include <map>
 #include <string>
@@ -9,7 +16,6 @@
 
 // the dbc unpack used to transform the value to can msg
 
-
-can_msg unpackCanmsg (message m, message_value mv);
+void packCanmsg (const message &m, float *value);
 
 #endif //_DBC_CANMSG_PACK_H_

@@ -45,10 +45,10 @@ struct message {
   }
 };
 
-struct message_value {
-  long id;
-  std::map<std::string, double> signals;
-};
+// struct message_value {
+//   long id;
+//   std::map<std::string, double> signals;
+// };
 
 struct can_msg {
   long id;

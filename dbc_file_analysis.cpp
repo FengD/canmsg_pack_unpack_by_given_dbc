@@ -4,149 +4,158 @@
 
 namespace dbc_analysis{
 
-  DbcAnalysis::DbcAnalysis() {
+DbcAnalysis::DbcAnalysis() {}
 
-  }
+DbcAnalysis::~DbcAnalysis() {}
 
-  DbcAnalysis::DbcAnalysis(std::string fn) : filename(fn) {
-
-  }
-
-  DbcAnalysis::~DbcAnalysis() {
-
-  }
-
-  void DbcAnalysis::messageLineTransform(std::string line, message &m) {
-    line.erase(std::remove(line.begin(), line.end(), ':'), line.end());
-    std::vector<std::string> strSplited;
-    split(line, " ", strSplited);
-    int counter = 0;
-    for(std::vector<std::string>::iterator info = strSplited.begin(); info != strSplited.end(); ++counter, info++) {
-      // std::cout << counter << " " <<  *info << std::endl;
-      switch(counter) {
-        case 1:
-          m.id = atol(info->c_str());
-          break;
-        case 2:
-          m.name = *info;
-          break;
-        case 3:
-          m.length = atoi(info->c_str());
-          break;
-      }
+void DbcAnalysis::messageLineTransform(std::string line, message &m) {
+  line.erase(std::remove(line.begin(), line.end(), ':'), line.end());
+  std::vector<std::string> strSplited;
+  split(line, " ", &strSplited);
+  int counter = 0;
+  for(std::vector<std::string>::iterator info = strSplited.begin(); info != strSplited.end(); ++counter, info++) {
+    switch(counter) {
+      case 1:
+        m.id = atol(info->c_str());
+        break;
+      case 2:
+        m.name = *info;
+        break;
+      case 3:
+        m.length = atoi(info->c_str());
+        break;
     }
   }
+}
 
-  void DbcAnalysis::signalLineTransform(std::string line, message &m) {
-    signal s;
-    line.erase(std::remove(line.begin(), line.end(), ':'), line.end());
-    std::vector<std::string> strSplited;
-    split(line, " ", strSplited);
-    int counter = 0;
-    for(std::vector<std::string>::iterator info = strSplited.begin(); info != strSplited.end(); ++counter, info++) {
-      // std::cout << counter << " " <<  *info << std::endl;
-      switch(counter) {
-        case 2:
-          s.name = *info;
-          break;
-        case 3:
-          getPosInfoTypeUnsignedFromStr(*info, s);
-          break;
-        case 4:
-          getFactorOffsetFromStr(*info, s);
-          break;
-        case 5:
-          getMaxMinFromStr(*info, s);
-          break;
-        case 6:
-          getUnitFromStr(*info, s);
-          break;
-      }
-    }
-    m.signals.push_back(s);
-  }
-
-  void DbcAnalysis::getPosInfoTypeUnsignedFromStr(std::string str, signal &s) {
-    if(str.find("+") > 0) {
-      s.is_unsigned = 1;
-      str.erase(std::remove(str.begin(), str.end(), '+'), str.end());
-    } else {
-      s.is_unsigned = 0;
-      str.erase(std::remove(str.begin(), str.end(), '-'), str.end());
-    }
-    str.replace(str.find("|"), 1, " ");
-    str.replace(str.find("@"), 1, " ");
-    std::vector<std::string> strSplited;
-    split(str, " ", strSplited);
-    // std::cout << str << std::endl;
-    s.start_position = atoi(strSplited.front().c_str());
-    s.length = atoi(strSplited.at(1).c_str());
-    s.type = atoi(strSplited.back().c_str());
-  }
-
-  void DbcAnalysis::getFactorOffsetFromStr(std::string str, signal &s) {
-    str.erase(std::remove(str.begin(), str.end(), '('), str.end());
-    str.erase(std::remove(str.begin(), str.end(), ')'), str.end());
-    std::vector<std::string> strSplited;
-    split(str, ",", strSplited);
-    // std::cout << str << std::endl;
-    s.factor = atof(strSplited.front().c_str());
-    s.offset = atof(strSplited.back().c_str());
-  }
-
-  void DbcAnalysis::getMaxMinFromStr(std::string str, signal &s) {
-    str.erase(std::remove(str.begin(), str.end(), '['), str.end());
-    str.erase(std::remove(str.begin(), str.end(), ']'), str.end());
-    std::vector<std::string> strSplited;
-    split(str, "|", strSplited);
-    // std::cout << str << std::endl;
-    s.max_value = atof(strSplited.back().c_str());
-    s.min_value = atof(strSplited.front().c_str());
-  }
-
-  void DbcAnalysis::getUnitFromStr(std::string str, signal &s) {
-    str.erase(std::remove(str.begin(), str.end(), '"'), str.end());
-    // std::cout << str << std::endl;
-    if(str.find("NA") != 0) {
-      s.unit = str;
+void DbcAnalysis::signalLineTransform(std::string line, message &m) {
+  signal s;
+  line.erase(std::remove(line.begin(), line.end(), ':'), line.end());
+  std::vector<std::string> strSplited;
+  split(line, " ", &strSplited);
+  int counter = 0;
+  for(std::vector<std::string>::iterator info = strSplited.begin(); info != strSplited.end(); ++counter, info++) {
+    switch(counter) {
+      case 1:
+        s.name = *info;
+        break;
+      case 2:
+        getPosInfoTypeUnsignedFromStr(*info, s);
+        break;
+      case 3:
+        getFactorOffsetFromStr(*info, s);
+        break;
+      case 4:
+        getMaxMinFromStr(*info, s);
+        break;
+      case 5:
+        getUnitFromStr(*info, s);
+        break;
     }
   }
+  m.signals.push_back(s);
+}
 
-  void DbcAnalysis::fileAnalysis() {
+void DbcAnalysis::getPosInfoTypeUnsignedFromStr(std::string str, signal &s) {
+  if(str.find("+") > 0) {
+    s.is_unsigned = 1;
+    str.erase(std::remove(str.begin(), str.end(), '+'), str.end());
+  } else {
+    s.is_unsigned = 0;
+    str.erase(std::remove(str.begin(), str.end(), '-'), str.end());
+  }
+  str.replace(str.find("|"), 1, " ");
+  str.replace(str.find("@"), 1, " ");
+  std::vector<std::string> strSplited;
+  split(str, " ", &strSplited);
+  s.start_position = atoi(strSplited.front().c_str());
+  s.length = atoi(strSplited.at(1).c_str());
+  s.type = atoi(strSplited.back().c_str());
+}
+
+void DbcAnalysis::getFactorOffsetFromStr(std::string str, signal &s) {
+  str.erase(std::remove(str.begin(), str.end(), '('), str.end());
+  str.erase(std::remove(str.begin(), str.end(), ')'), str.end());
+  std::vector<std::string> strSplited;
+  split(str, ",", &strSplited);
+  s.factor = atof(strSplited.front().c_str());
+  s.offset = atof(strSplited.back().c_str());
+}
+
+void DbcAnalysis::getMaxMinFromStr(std::string str, signal &s) {
+  str.erase(std::remove(str.begin(), str.end(), '['), str.end());
+  str.erase(std::remove(str.begin(), str.end(), ']'), str.end());
+  std::vector<std::string> strSplited;
+  split(str, "|", &strSplited);
+  s.max_value = atof(strSplited.back().c_str());
+  s.min_value = atof(strSplited.front().c_str());
+}
+
+void DbcAnalysis::getUnitFromStr(std::string str, signal &s) {
+  str.erase(std::remove(str.begin(), str.end(), '"'), str.end());
+  if(str.find("NA") != 0) {
+    s.unit = str;
+  }
+}
+
+void DbcAnalysis::fileAnalysis() {
+  for (std::string &filename : files_) {
     std::ifstream in(filename.c_str());
     std::string line;
     if(in) {
       while (getline (in, line)) {
     		if(line.find( MSSAGEHEAD ) == 0){
           message newMessage;
-    			// std::cout << line << std::endl;
           messageLineTransform(line, newMessage);
           while(getline (in, line)){
             if(line.find( SIGNALHEAD ) == 1){
-              // std::cout << line << std::endl;
               signalLineTransform(line, newMessage);
               continue;
             }
             sort(newMessage.signals.begin(), newMessage.signals.end());
             break;
           }
-          if(newMessage.id < 4096) {
-            messages.insert(std::map<long, message>::value_type (newMessage.id, newMessage));
-          }
+          // if(newMessage.id < 4096) {
+          messages_.insert(std::map<long, message>::value_type (newMessage.id, newMessage));
+          // }
         }
       }
+    } else {
+      std::cout << "no file named " << filename << std::endl;
     }
-    else {
-      // std::cout <<"no such file" << std::endl;
+  }
+}
+
+void DbcAnalysis::addOneDbcFile(const std::string &filePath) {
+  files_.push_back(filePath);
+}
+
+std::map<long, message> DbcAnalysis::getMessages() {
+  return messages_;
+}
+
+void DbcAnalysis::printMessages() {
+  std::cout << "structure: " << std::endl;
+  std::cout << "nb of messages_: " << messages_.size() << std::endl;
+  for(std::map<long, message>::const_iterator m = messages_.begin(); m != messages_.end(); m++) {
+    std::cout << "  id: " << m->first << std::endl;
+    std::cout << "  name: " << m->second.name << std::endl;
+    std::cout << "  length: " << m->second.length << std::endl;
+    std::cout << "  nb of signals: " << m->second.signals.size() << std::endl;
+    for(std::vector<signal>::const_iterator s = m->second.signals.begin(); s != m->second.signals.end(); s++) {
+      std::cout << "    name: " << s->name << std::endl;
+      std::cout << "    (start_position, length): (" << s->start_position << ", " << s->length << ")" << std::endl;
+      std::cout << "    (factor, offset): (" << s->factor << ", " << s->offset << ")" << std::endl;
+      std::cout << "    (min_value, max_value): (" << s->min_value << ", " << s->max_value << ")" << std::endl;
+      // 关于起始位置，和Intel格式或者是Motorola格式是有关的，如果是Intel格式，起始位通常是0
+      std::cout << "    type: " << s->type << " (motolora: 0, intel: 1)" << std::endl;
+      std::cout << "    unsigned: " << s->is_unsigned << " (unsigned: 1, signed: 0)" << std::endl;
+      std::cout << "    unit: " << s->unit << std::endl;
+      std::cout << std::endl;
     }
+    std::cout << std::endl;
+    std::cout << std::endl;
   }
-
-  void DbcAnalysis::setFileName(std::string fn) {
-    filename = fn;
-  }
-
-  std::map<long, message> DbcAnalysis::getMessages() {
-      return messages;
-  }
+}
 
 }
