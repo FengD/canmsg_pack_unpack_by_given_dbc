@@ -63,9 +63,8 @@ void packCanmsg (const message &m, const int &valueSize, const float *value, uns
     std::cout << "value given error" << std::endl;
     return;
   }
-  
+
   int index = 0;
-  // can_msg m;
   for (std::vector<signal>::const_iterator s = m.signals.begin(); s != m.signals.end(); s++) {
     packSignal(*s, value[index], data);
     index++;

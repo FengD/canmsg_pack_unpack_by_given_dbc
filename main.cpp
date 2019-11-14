@@ -4,10 +4,12 @@
 #include <stdlib.h>
 #include <iostream>
 #include <vector>
+#include <unistd.h>
 #include "dbc_file_analysis.h"
 #include "dbc_canmsg_unpack.h"
 #include "dbc_canmsg_pack.h"
 #include "struct_define.h"
+
 using namespace std;
 
 int main() {
@@ -19,7 +21,7 @@ int main() {
   //dbcAnalysis.addOneDbcFile(file2);
   dbcAnalysis.addOneDbcFile(file3);
   dbcAnalysis.fileAnalysis();
-  // dbcAnalysis.printMessages();
+  dbcAnalysis.printMessages();
   can_msg test;
   test.id = 2025;
   test.length = 5;
@@ -32,8 +34,8 @@ int main() {
   test.data[6] = 0;
   test.data[7] = 0;
   unpackCanmsg(dbcAnalysis.getMessages()[test.id], test);
-  float value[3] = {0,0,0};
 
+  float value[3] = {-5360,1,-5370};
   unsigned char data[8] = {0};
   packCanmsg(dbcAnalysis.getMessages()[2024], 3, value, data);
 
