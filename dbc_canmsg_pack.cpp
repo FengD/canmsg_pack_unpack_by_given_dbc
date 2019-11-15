@@ -6,17 +6,16 @@
 */
 
 #include "dbc_canmsg_pack.h"
-#include <iostream>
 #include <math.h>
 
-#define BITCALCULATE(type) \
-data[startIndex] = data[startIndex] | (type)((type) \
+#define BITCALCULATEPACK(type) \
+data[startIndex] = data[startIndex] | (uint8_T)((uint8_T) \
   ((type)(packedValue & (type)(((type)(1)) << i)) >> i)<< leftShift);
 
-#define TYPECALCULATEBIT \
+#define TYPECALCULATEBITUNPACK(type) \
 if (s.dataType) {\
   for (int i = 0; i < s.length; i++) {\
-    BITCALCULATE(uint8_T);\
+    BITCALCULATEPACK(type);\
     leftShift++;\
     if (leftShift == 8) {\
       leftShift = 0;\
@@ -25,7 +24,7 @@ if (s.dataType) {\
   }\
 } else {\
   for (int i = 0; i < s.length; i++) {\
-    BITCALCULATE(uint8_T);\
+    BITCALCULATEPACK(type);\
     leftShift++;\
     if (leftShift == 8) {\
       leftShift = 0;\
@@ -43,7 +42,7 @@ if (outValue > (real64_T)(max)) {\
 } else {\
   packedValue = (type) (outValue);\
 }\
-TYPECALCULATEBIT
+TYPECALCULATEBITUNPACK(type)
 
 #define PACKVALUESIGNED(type)\
 type packedValue;\
@@ -56,25 +55,26 @@ if (scaledValue > (type) (max)) {\
 } else {\
   packedValue = (type) (scaledValue);\
 }\
-TYPECALCULATEBIT
+TYPECALCULATEBITUNPACK(type)
 
 #define DELTA 0.0001
 
-void packCanmsg (const message &m, const size_t &valueSize, const float *value, unsigned char *data) {
+void packCanmsg (const Message &m, const size_t &valueSize, const float *value, Canmsg *msg) {
   if (valueSize != m.signals.size()) {
-    std::cout << "value given error" << std::endl;
+    printf("value given error\n");
     return;
   }
-
+  msg->id = m.id;
+  msg->length = m.length;
   int index = 0;
-  for (std::vector<signal>::const_iterator s = m.signals.begin(); s != m.signals.end(); s++) {
-    packSignal(*s, value[index], data);
+  for (std::vector<Signal>::const_iterator s = m.signals.begin(); s != m.signals.end(); s++) {
+    packSignal(*s, value[index], msg->data);
     index++;
   }
 }
 
-void packSignal (const signal &s, const double &value, unsigned char *data) {
-  // --------------- START Packing signal ------------------
+void packSignal (const Signal &s, const double &value, uint8_T *data) {
+  // --------------- START Packing Signal ------------------
   //   startBit                = s.startBit
   //   length                  = s.length
   //   desiredSignalByteLayout = s.dataType
@@ -102,7 +102,6 @@ void packSignal (const signal &s, const double &value, unsigned char *data) {
 
       result = (result - s.offset) / s.factor;
       outValue = result;
-      std::cout << outValue << std::endl;
     }
 
     int startIndex = s.startBit / 8;
@@ -111,9 +110,8 @@ void packSignal (const signal &s, const double &value, unsigned char *data) {
     if (s.is_unsigned) {
       long max = pow(2, s.length);
       long min = 0;
-      std::cout << max << ", " << min << std::endl;
       if (s.length <= 8) {
-        PACKVALUEUNSIGNED(uint8_t);
+        PACKVALUEUNSIGNED(uint8_T);
       } else if (s.length > 8 && s.length <= 16) {
         PACKVALUEUNSIGNED(uint16_T);
       } else if (s.length > 16 && s.length <= 32) {
@@ -124,7 +122,6 @@ void packSignal (const signal &s, const double &value, unsigned char *data) {
     } else {
       long max = pow(2, s.length) / 2;
       long min = (-1) * max - 1;
-      std::cout << max << ", " << min << std::endl;
       if (s.length <= 8) {
         PACKVALUESIGNED(int8_T);
       } else if (s.length > 8 && s.length <= 16) {

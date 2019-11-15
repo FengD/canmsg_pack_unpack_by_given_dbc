@@ -24,25 +24,33 @@ int main() {
   dbcAnalysis.addOneDbcFile(file3);
   dbcAnalysis.fileAnalysis();
   // dbcAnalysis.printMessages();
-  can_msg test;
-  test.id = 2025;
-  test.length = 5;
-  test.data[0] = 123;
-  test.data[1] = 123;
-  test.data[2] = 123;
-  test.data[3] = 22;
-  test.data[4] = 23;
-  test.data[5] = 0;
-  test.data[6] = 0;
-  test.data[7] = 0;
-  unpackCanmsg(dbcAnalysis.getMessages()[test.id], test);
 
-  float value[4] = {0, 0, 0, 0};
-  unsigned char data[8] = {0};
-  packCanmsg(dbcAnalysis.getMessages()[1280], 4, value, data);
+  double valueOut[4] = {3, 3, 3, 3};
+  Canmsg test;
+  test.id = 1280;
+  test.length = 8;
+  test.data[0] = 0xe2;
+  test.data[1] = 0x01;
+  test.data[2] = 0xfa;
+  test.data[3] = 0x40;
+  test.data[4] = 0x7e;
+  test.data[5] = 0x90;
+  test.data[6] = 0x00;
+  test.data[7] = 0x00;
+  unpackCanmsg(dbcAnalysis.getMessages()[test.id], test, 4, valueOut);
+
+  for (int i = 0; i < 4; i++) {
+    printf("%lf ", valueOut[i]);
+  }
+  printf("\n");
+
+
+  float valueIn[4] = {0, 0, 0, 0};
+  Canmsg msg = {0};
+  packCanmsg(dbcAnalysis.getMessages()[1280], 4, valueIn, &msg);
 
   for (int i = 0; i < 8; i++) {
-    printf("%x ", data[i]);
+    printf("%x ", msg.data[i]);
   }
   printf("\n");
   return 0;

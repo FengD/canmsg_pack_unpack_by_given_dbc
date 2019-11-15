@@ -23,7 +23,7 @@ typedef unsigned long uint64_T;
 typedef float real32_T;
 typedef double real64_T;
 
-struct signal {
+struct Signal {
 	std::string name;
 	int startBit;
 	int length;
@@ -35,27 +35,27 @@ struct signal {
 	int is_unsigned;
 	std::string unit;
 
-	bool operator <(const signal& s) const // 升序排序时必须写的函数
+	bool operator <(const Signal& s) const // 升序排序时必须写的函数
   {
       return startBit < s.startBit;
   }
-  bool operator >(const signal& s) const // 降序排序时必须写的函数
+  bool operator >(const Signal& s) const // 降序排序时必须写的函数
   {
       return startBit > s.startBit;
   }
 };
 
-struct message {
+struct Message {
 	long id;
 	std::string name;
 	int length;
-	std::vector<signal> signals;
+	std::vector<Signal> signals;
 
-	bool operator <(const message& msg) const // 升序排序时必须写的函数
+	bool operator <(const Message& msg) const // 升序排序时必须写的函数
   {
       return id < msg.id;
   }
-  bool operator >(const message& msg) const // 降序排序时必须写的函数
+  bool operator >(const Message& msg) const // 降序排序时必须写的函数
   {
       return id > msg.id;
   }
@@ -66,10 +66,10 @@ struct message {
 //   std::map<std::string, double> signals;
 // };
 
-struct can_msg {
+struct Canmsg {
   long id;
-  uint8_t  length;
-  uint8_t  data[8];
+  int  length;
+  uint8_T  data[8];
 };
 
 #endif //_STRUCT_DEFINE_H_

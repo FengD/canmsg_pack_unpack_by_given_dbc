@@ -1305,7 +1305,7 @@ BO_ 1568 Objects_Signals_Header: 8 Vector__XXX
 
 
 
-CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+CM_ BO_ 3221225472 "This is a Message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
 CM_ SG_ 3221225472 FCW_VO_FCW_SUPPRESSIONS_SETB "0-VEHICLE_ACCELERATION
 1-VEHICLE_ACCELERATION_GRACE
 2-VEHICLE_BRAKE

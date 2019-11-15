@@ -10,8 +10,6 @@
 
 #include <fstream>
 #include <string>
-#include <stdio.h>
-#include <stdlib.h>
 #include <iostream>
 #include "struct_define.h"
 
@@ -21,13 +19,13 @@
 namespace dbc_analysis {
 class DbcAnalysis {
  private:
-  void messageLineTransform(std::string line, message& m);
- 	void signalLineTransform(std::string line, message &m);
- 	void getPosInfoTypeUnsignedFromStr(std::string str, signal &s);
- 	void getFactorOffsetFromStr(std::string str, signal &s);
- 	void getMaxMinFromStr(std::string str, signal &s);
- 	void getUnitFromStr(std::string str, signal &s);
-	std::map<long, message> messages_;
+  void messageLineTransform(std::string line, Message& m);
+ 	void signalLineTransform(std::string line, Message &m);
+ 	void getPosInfoTypeUnsignedFromStr(std::string str, Signal &s);
+ 	void getFactorOffsetFromStr(std::string str, Signal &s);
+ 	void getMaxMinFromStr(std::string str, Signal &s);
+ 	void getUnitFromStr(std::string str, Signal &s);
+	std::map<long, Message> messages_;
 	std::vector<std::string> files_;
 
  public:
@@ -38,7 +36,7 @@ class DbcAnalysis {
 	void printMessages();
 	void fileAnalysis();
 	void addOneDbcFile(const std::string &filePath);
-	std::map<long, message> getMessages();
+	std::map<long, Message> getMessages();
 };
 } // namespace dbc_analysis
 

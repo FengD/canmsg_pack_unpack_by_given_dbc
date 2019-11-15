@@ -13,11 +13,20 @@
 #include <string.h>
 #include "struct_define.h"
 
+/** the dbc pack used to transform the value to can msg
+* @param in [struct Message] the message that you want to pack
+* @param in [unsigned int] the size of the value list
+* @param in [float array] the array of the values
+* @param out [struct Canmsg] the canmsg
+*/
+void packCanmsg (const Message &m, const size_t &valueSize, const float *value, Canmsg *msg);
 
-// the dbc unpack used to transform the value to can msg
-
-void packCanmsg (const message &m, const size_t &valueSize, const float *value, unsigned char *data);
-
-void packSignal (const signal &s, const double &value, unsigned char *data);
+/**
+* pack one Signal
+* @param in [struct Signal] the Signal that you want to pack
+* @param in [double] the value that you want to pack in the Signal
+* @param out [unsigned char array] the data array of the can msg
+*/
+void packSignal (const Signal &s, const double &value, uint8_T *data);
 
 #endif //_DBC_CANMSG_PACK_H_

@@ -1,6 +1,6 @@
 #include "dbc_file_analysis.h"
-#include "util.h"
 #include <algorithm>
+#include "util.h"
 
 namespace dbc_analysis{
 
@@ -8,7 +8,7 @@ DbcAnalysis::DbcAnalysis() {}
 
 DbcAnalysis::~DbcAnalysis() {}
 
-void DbcAnalysis::messageLineTransform(std::string line, message &m) {
+void DbcAnalysis::messageLineTransform(std::string line, Message &m) {
   line.erase(std::remove(line.begin(), line.end(), ':'), line.end());
   std::vector<std::string> strSplited;
   split(line, " ", &strSplited);
@@ -28,8 +28,8 @@ void DbcAnalysis::messageLineTransform(std::string line, message &m) {
   }
 }
 
-void DbcAnalysis::signalLineTransform(std::string line, message &m) {
-  signal s;
+void DbcAnalysis::signalLineTransform(std::string line, Message &m) {
+  Signal s;
   line.erase(std::remove(line.begin(), line.end(), ':'), line.end());
   std::vector<std::string> strSplited;
   split(line, " ", &strSplited);
@@ -56,7 +56,7 @@ void DbcAnalysis::signalLineTransform(std::string line, message &m) {
   m.signals.push_back(s);
 }
 
-void DbcAnalysis::getPosInfoTypeUnsignedFromStr(std::string str, signal &s) {
+void DbcAnalysis::getPosInfoTypeUnsignedFromStr(std::string str, Signal &s) {
   if(str.find("+") > 0) {
     s.is_unsigned = 1;
     str.erase(std::remove(str.begin(), str.end(), '+'), str.end());
@@ -73,7 +73,7 @@ void DbcAnalysis::getPosInfoTypeUnsignedFromStr(std::string str, signal &s) {
   s.dataType = atoi(strSplited.back().c_str());
 }
 
-void DbcAnalysis::getFactorOffsetFromStr(std::string str, signal &s) {
+void DbcAnalysis::getFactorOffsetFromStr(std::string str, Signal &s) {
   str.erase(std::remove(str.begin(), str.end(), '('), str.end());
   str.erase(std::remove(str.begin(), str.end(), ')'), str.end());
   std::vector<std::string> strSplited;
@@ -82,7 +82,7 @@ void DbcAnalysis::getFactorOffsetFromStr(std::string str, signal &s) {
   s.offset = atof(strSplited.back().c_str());
 }
 
-void DbcAnalysis::getMaxMinFromStr(std::string str, signal &s) {
+void DbcAnalysis::getMaxMinFromStr(std::string str, Signal &s) {
   str.erase(std::remove(str.begin(), str.end(), '['), str.end());
   str.erase(std::remove(str.begin(), str.end(), ']'), str.end());
   std::vector<std::string> strSplited;
@@ -91,7 +91,7 @@ void DbcAnalysis::getMaxMinFromStr(std::string str, signal &s) {
   s.minimum = atof(strSplited.front().c_str());
 }
 
-void DbcAnalysis::getUnitFromStr(std::string str, signal &s) {
+void DbcAnalysis::getUnitFromStr(std::string str, Signal &s) {
   str.erase(std::remove(str.begin(), str.end(), '"'), str.end());
   if(str.find("NA") != 0) {
     s.unit = str;
@@ -105,7 +105,7 @@ void DbcAnalysis::fileAnalysis() {
     if(in) {
       while (getline (in, line)) {
     		if(line.find( MSSAGEHEAD ) == 0){
-          message newMessage;
+          Message newMessage;
           messageLineTransform(line, newMessage);
           while(getline (in, line)){
             if(line.find( SIGNALHEAD ) == 1){
@@ -116,7 +116,7 @@ void DbcAnalysis::fileAnalysis() {
             break;
           }
           // if(newMessage.id < 4096) {
-          messages_.insert(std::map<long, message>::value_type (newMessage.id, newMessage));
+          messages_.insert(std::map<long, Message>::value_type (newMessage.id, newMessage));
           // }
         }
       }
@@ -130,19 +130,19 @@ void DbcAnalysis::addOneDbcFile(const std::string &filePath) {
   files_.push_back(filePath);
 }
 
-std::map<long, message> DbcAnalysis::getMessages() {
+std::map<long, Message> DbcAnalysis::getMessages() {
   return messages_;
 }
 
 void DbcAnalysis::printMessages() {
   std::cout << "structure: " << std::endl;
   std::cout << "nb of messages_: " << messages_.size() << std::endl;
-  for(std::map<long, message>::const_iterator m = messages_.begin(); m != messages_.end(); m++) {
+  for(std::map<long, Message>::const_iterator m = messages_.begin(); m != messages_.end(); m++) {
     std::cout << "  id: " << m->first << std::endl;
     std::cout << "  name: " << m->second.name << std::endl;
     std::cout << "  length: " << m->second.length << std::endl;
     std::cout << "  nb of signals: " << m->second.signals.size() << std::endl;
-    for(std::vector<signal>::const_iterator s = m->second.signals.begin(); s != m->second.signals.end(); s++) {
+    for(std::vector<Signal>::const_iterator s = m->second.signals.begin(); s != m->second.signals.end(); s++) {
       std::cout << "    name: " << s->name << std::endl;
       std::cout << "    (startBit, length): (" << s->startBit << ", " << s->length << ")" << std::endl;
       std::cout << "    (factor, offset): (" << s->factor << ", " << s->offset << ")" << std::endl;

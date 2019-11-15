@@ -13,12 +13,20 @@
 #include <string.h>
 #include "struct_define.h"
 
+/** the dbc unpack used to transform the can msg to value
+* @param in [struct Message] the message that you want to unpack
+* @param in [struct Canmsg] the canmsg
+* @param in [unsigned int] the size of the value list
+* @param out [double array] the array of the values
+*/
+void unpackCanmsg (const Message &m, const Canmsg &msg, const size_t valueSize, double *value);
 
-// the dbc unpack used to transform the can msg to value
-
-
-void unpackCanmsg (const message &m, const can_msg &c);
-
-
+/**
+* pack one Signal
+* @param in [struct Signal] the Signal that you want to unpack
+* @param in [unsigned char array] the data array of the can msg
+* @return [double] the value that you unpack from the Signal
+*/
+real64_T unpackSignal (const Signal &s, const uint8_T *data);
 
 #endif //_DBC_CANMSG_UNPACK_H_
