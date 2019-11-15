@@ -58,7 +58,9 @@ if (scaledValue > (type) (max)) {\
 }\
 TYPECALCULATEBIT
 
-void packCanmsg (const message &m, const int &valueSize, const float *value, unsigned char *data) {
+#define DELTA 0.0001
+
+void packCanmsg (const message &m, const size_t &valueSize, const float *value, unsigned char *data) {
   if (valueSize != m.signals.size()) {
     std::cout << "value given error" << std::endl;
     return;
@@ -86,18 +88,21 @@ void packSignal (const signal &s, const double &value, unsigned char *data) {
     real64_T outValue = 0;
     {
       real64_T result = value;
-      if (result < s.minimum) {
-        // lower saturation
-        result = s.minimum;
-      }
+      if (fabs(s.minimum - 0.0) > DELTA || fabs(s.maximum - 0.0) > DELTA) {
+        if (result < s.minimum) {
+          // lower saturation
+          result = s.minimum;
+        }
 
-      if (result > s.maximum) {
-        // upper saturation
-        result = s.maximum;
+        if (result > s.maximum) {
+          // upper saturation
+          result = s.maximum;
+        }
       }
 
       result = (result - s.offset) / s.factor;
       outValue = result;
+      std::cout << outValue << std::endl;
     }
 
     int startIndex = s.startBit / 8;
@@ -106,6 +111,7 @@ void packSignal (const signal &s, const double &value, unsigned char *data) {
     if (s.is_unsigned) {
       long max = pow(2, s.length);
       long min = 0;
+      std::cout << max << ", " << min << std::endl;
       if (s.length <= 8) {
         PACKVALUEUNSIGNED(uint8_t);
       } else if (s.length > 8 && s.length <= 16) {
@@ -118,6 +124,7 @@ void packSignal (const signal &s, const double &value, unsigned char *data) {
     } else {
       long max = pow(2, s.length) / 2;
       long min = (-1) * max - 1;
+      std::cout << max << ", " << min << std::endl;
       if (s.length <= 8) {
         PACKVALUESIGNED(int8_T);
       } else if (s.length > 8 && s.length <= 16) {

@@ -13,15 +13,17 @@
 using namespace std;
 
 int main() {
-  //string file = "./HMI260.dbc";
-  //string file2 = "./HMI260.dbc1";
   string file3 = "/home/ding/Documents/doc/hirain/gangkou/report/CANoe/Lidar_other.dbc";
+  string file = "/home/ding/Documents/doc/hirain/gangkou/report/CANoe/LaserObjs.dbc";
+  string file1 = "/home/ding/Documents/doc/hirain/gangkou/report/CANoe/LidarFS_polar.dbc";
+  string file2 = "/home/ding/Documents/doc/hirain/gangkou/report/CANoe/Lidar_other.dbc";
   dbc_analysis::DbcAnalysis dbcAnalysis;
-  //dbcAnalysis.addOneDbcFile(file);
-  //dbcAnalysis.addOneDbcFile(file2);
+  dbcAnalysis.addOneDbcFile(file);
+  dbcAnalysis.addOneDbcFile(file1);
+  dbcAnalysis.addOneDbcFile(file2);
   dbcAnalysis.addOneDbcFile(file3);
   dbcAnalysis.fileAnalysis();
-  dbcAnalysis.printMessages();
+  // dbcAnalysis.printMessages();
   can_msg test;
   test.id = 2025;
   test.length = 5;
@@ -35,9 +37,9 @@ int main() {
   test.data[7] = 0;
   unpackCanmsg(dbcAnalysis.getMessages()[test.id], test);
 
-  float value[3] = {-5360,1,-5370};
+  float value[4] = {0, 0, 0, 0};
   unsigned char data[8] = {0};
-  packCanmsg(dbcAnalysis.getMessages()[2024], 3, value, data);
+  packCanmsg(dbcAnalysis.getMessages()[1280], 4, value, data);
 
   for (int i = 0; i < 8; i++) {
     printf("%x ", data[i]);

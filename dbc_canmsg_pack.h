@@ -16,7 +16,7 @@
 
 // the dbc unpack used to transform the value to can msg
 
-void packCanmsg (const message &m, const int &valueSize, const float *value, unsigned char *data);
+void packCanmsg (const message &m, const size_t &valueSize, const float *value, unsigned char *data);
 
 void packSignal (const signal &s, const double &value, unsigned char *data);
 
