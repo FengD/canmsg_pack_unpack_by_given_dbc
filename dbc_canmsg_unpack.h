@@ -13,6 +13,8 @@
 #include <string.h>
 #include "struct_define.h"
 
+namespace can_util {
+
 /** the dbc unpack used to transform the can msg to value
 * @param in [struct Message] the message that you want to unpack
 * @param in [struct Canmsg] the canmsg
@@ -28,5 +30,7 @@ void unpackCanmsg (const Message &m, const Canmsg &msg, const size_t valueSize, 
 * @return [double] the value that you unpack from the Signal
 */
 real64_T unpackSignal (const Signal &s, const uint8_T *data);
+
+} // namespace can_util
 
 #endif //_DBC_CANMSG_UNPACK_H_

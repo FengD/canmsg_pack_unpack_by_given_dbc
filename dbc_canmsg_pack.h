@@ -12,6 +12,7 @@
 #include <string>
 #include <string.h>
 #include "struct_define.h"
+namespace can_util {
 
 /** the dbc pack used to transform the value to can msg
 * @param in [struct Message] the message that you want to pack
@@ -28,5 +29,7 @@ void packCanmsg (const Message &m, const size_t &valueSize, const float *value, 
 * @param out [unsigned char array] the data array of the can msg
 */
 void packSignal (const Signal &s, const double &value, uint8_T *data);
+
+} // namespace can_util
 
 #endif //_DBC_CANMSG_PACK_H_

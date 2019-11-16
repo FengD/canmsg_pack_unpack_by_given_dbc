@@ -37,18 +37,22 @@ if (s.dataType) {\
 unpackedValue = tempValue;\
 outValue = (real64_T) (unpackedValue);
 
+namespace can_util {
+
 void unpackCanmsg (const Message &m, const Canmsg &msg, const size_t valueSize, double *value) {
+  // if the message has the correct number of signals
   if (valueSize != m.signals.size()) {
     printf("value given error\n");
     return;
   }
-
+  // double check the id and the length
   if (m.id != msg.id || m.length != msg.length) {
-    printf("canmsg in put id or length error\n");
+    printf("canmsg length or id error\n");
     return;
   }
 
   int index = 0;
+  // unpack the signals
   for (std::vector<Signal>::const_iterator s = m.signals.begin(); s != m.signals.end(); s++) {
     value[index] = unpackSignal(*s, msg.data);
     index++;
@@ -108,3 +112,4 @@ real64_T unpackSignal (const Signal &s, const uint8_T *data) {
 
   return result;
 }
+} // namespace can_util

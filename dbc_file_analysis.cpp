@@ -2,25 +2,42 @@
 #include <algorithm>
 #include "util.h"
 
-namespace dbc_analysis{
+namespace dbc_analysis {
 
-DbcAnalysis::DbcAnalysis() {}
+pthread_mutex_t DbcAnalysis::mutex;
 
-DbcAnalysis::~DbcAnalysis() {}
+DbcAnalysis* DbcAnalysis::getInstance() {
+  pthread_mutex_lock(&mutex);
+  static DbcAnalysis obj;
+  pthread_mutex_unlock(&mutex);
+  return &obj;
+}
 
-void DbcAnalysis::messageLineTransform(std::string line, Message &m) {
+DbcAnalysis::DbcAnalysis() { }
+
+DbcAnalysis::~DbcAnalysis() { }
+
+DbcAnalysis::DbcAnalysis(const DbcAnalysis&) { }
+
+DbcAnalysis& DbcAnalysis::operator=(const DbcAnalysis&) { }
+
+void DbcAnalysis::transformMessageFromLine(std::string line, Message &m) {
+  // remove the ":" in the line
   line.erase(std::remove(line.begin(), line.end(), ':'), line.end());
   std::vector<std::string> strSplited;
   split(line, " ", &strSplited);
   int counter = 0;
   for(std::vector<std::string>::iterator info = strSplited.begin(); info != strSplited.end(); ++counter, info++) {
     switch(counter) {
+      // get the id of the msg
       case 1:
         m.id = atol(info->c_str());
         break;
+      // get the name
       case 2:
         m.name = *info;
         break;
+      // get the length
       case 3:
         m.length = atoi(info->c_str());
         break;
@@ -28,8 +45,9 @@ void DbcAnalysis::messageLineTransform(std::string line, Message &m) {
   }
 }
 
-void DbcAnalysis::signalLineTransform(std::string line, Message &m) {
+void DbcAnalysis::transformSignalFromLine(std::string line, Message &m) {
   Signal s;
+  // remove the ":" in the line
   line.erase(std::remove(line.begin(), line.end(), ':'), line.end());
   std::vector<std::string> strSplited;
   split(line, " ", &strSplited);
@@ -98,7 +116,11 @@ void DbcAnalysis::getUnitFromStr(std::string str, Signal &s) {
   }
 }
 
-void DbcAnalysis::fileAnalysis() {
+void DbcAnalysis::analysisFiles() {
+  if (files_.size() == 0) {
+    printf("No file given!\n");
+    return;
+  }
   for (std::string &filename : files_) {
     std::ifstream in(filename.c_str());
     std::string line;
@@ -106,22 +128,21 @@ void DbcAnalysis::fileAnalysis() {
       while (getline (in, line)) {
     		if(line.find( MSSAGEHEAD ) == 0){
           Message newMessage;
-          messageLineTransform(line, newMessage);
+          transformMessageFromLine(line, newMessage);
           while(getline (in, line)){
             if(line.find( SIGNALHEAD ) == 1){
-              signalLineTransform(line, newMessage);
+              transformSignalFromLine(line, newMessage);
               continue;
             }
             sort(newMessage.signals.begin(), newMessage.signals.end());
             break;
           }
-          // if(newMessage.id < 4096) {
+
           messages_.insert(std::map<long, Message>::value_type (newMessage.id, newMessage));
-          // }
         }
       }
     } else {
-      std::cout << "no file named " << filename << std::endl;
+      printf("No file named %s\n", filename.c_str());
     }
   }
 }
@@ -130,7 +151,7 @@ void DbcAnalysis::addOneDbcFile(const std::string &filePath) {
   files_.push_back(filePath);
 }
 
-std::map<long, Message> DbcAnalysis::getMessages() {
+std::map<long, Message>& DbcAnalysis::getMessages() {
   return messages_;
 }
 
@@ -158,4 +179,4 @@ void DbcAnalysis::printMessages() {
   }
 }
 
-}
+} // namespace dbc_analysis

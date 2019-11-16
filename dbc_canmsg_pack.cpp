@@ -59,7 +59,10 @@ TYPECALCULATEBITUNPACK(type)
 
 #define DELTA 0.0001
 
+namespace can_util {
+
 void packCanmsg (const Message &m, const size_t &valueSize, const float *value, Canmsg *msg) {
+  // if the message has the correct number of signals
   if (valueSize != m.signals.size()) {
     printf("value given error\n");
     return;
@@ -67,6 +70,7 @@ void packCanmsg (const Message &m, const size_t &valueSize, const float *value, 
   msg->id = m.id;
   msg->length = m.length;
   int index = 0;
+  // pack values
   for (std::vector<Signal>::const_iterator s = m.signals.begin(); s != m.signals.end(); s++) {
     packSignal(*s, value[index], msg->data);
     index++;
@@ -88,6 +92,7 @@ void packSignal (const Signal &s, const double &value, uint8_T *data) {
     real64_T outValue = 0;
     {
       real64_T result = value;
+      // check the maximum & minimum
       if (fabs(s.minimum - 0.0) > DELTA || fabs(s.maximum - 0.0) > DELTA) {
         if (result < s.minimum) {
           // lower saturation
@@ -106,7 +111,7 @@ void packSignal (const Signal &s, const double &value, uint8_T *data) {
 
     int startIndex = s.startBit / 8;
     int leftShift = s.startBit % 8;
-
+    // pack the value by the type
     if (s.is_unsigned) {
       long max = pow(2, s.length);
       long min = 0;
@@ -133,5 +138,6 @@ void packSignal (const Signal &s, const double &value, uint8_T *data) {
       }
     }
   }
-
 }
+
+} // namespace can_util
