@@ -50,6 +50,7 @@ void DbcAnalysis::transformSignalFromLine(std::string line, Message &m) {
   // remove the ":" in the line
   line.erase(std::remove(line.begin(), line.end(), ':'), line.end());
   std::vector<std::string> strSplited;
+  std::cout << line << std::endl;
   split(line, " ", &strSplited);
   int counter = 0;
   for(std::vector<std::string>::iterator info = strSplited.begin(); info != strSplited.end(); ++counter, info++) {
@@ -75,13 +76,16 @@ void DbcAnalysis::transformSignalFromLine(std::string line, Message &m) {
 }
 
 void DbcAnalysis::getPosInfoTypeUnsignedFromStr(std::string str, Signal &s) {
-  if(str.find("+") > 0) {
+  int plusIndex = str.find("+");
+  int strLength = str.size();
+  if(plusIndex > 0 && plusIndex < strLength) {
     s.is_unsigned = 1;
     str.erase(std::remove(str.begin(), str.end(), '+'), str.end());
   } else {
     s.is_unsigned = 0;
     str.erase(std::remove(str.begin(), str.end(), '-'), str.end());
   }
+
   str.replace(str.find("|"), 1, " ");
   str.replace(str.find("@"), 1, " ");
   std::vector<std::string> strSplited;
@@ -169,7 +173,7 @@ void DbcAnalysis::printMessages() {
       std::cout << "    (factor, offset): (" << s->factor << ", " << s->offset << ")" << std::endl;
       std::cout << "    (minimum, maximum): (" << s->minimum << ", " << s->maximum << ")" << std::endl;
       // 关于起始位置，和Intel格式或者是Motorola格式是有关的，如果是Intel格式，起始位通常是0
-      std::cout << "    dataType: " << s->dataType << " (motolora: 0 <LITTLEENDIAN>, intel: 1 <BIGENDIAN>)" << std::endl;
+      std::cout << "    dataType: " << s->dataType << " (motolora: 0 <BIGENDIAN>, intel: 1 <LITTLEENDIAN>)" << std::endl;
       std::cout << "    unsigned: " << s->is_unsigned << " (unsigned: 1, signed: 0)" << std::endl;
       std::cout << "    unit: " << s->unit << std::endl;
       std::cout << std::endl;

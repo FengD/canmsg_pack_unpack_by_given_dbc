@@ -19,7 +19,7 @@ if (s.dataType) {\
     leftShift++;\
     if (leftShift == 8) {\
       leftShift = 0;\
-      startIndex--;\
+      startIndex++;\
     }\
   }\
 } else {\
@@ -28,7 +28,7 @@ if (s.dataType) {\
     leftShift++;\
     if (leftShift == 8) {\
       leftShift = 0;\
-      startIndex++;\
+      startIndex--;\
     }\
   }\
 }
@@ -109,11 +109,20 @@ void packSignal (const Signal &s, const double &value, uint8_T *data) {
       outValue = result;
     }
 
-    int startIndex = s.startBit / 8;
-    int leftShift = s.startBit % 8;
+    int startBit = s.startBit;
+    // if the motolora type BEGENDIAN
+    if (!s.dataType) {
+      int tmp1 = startBit / 8;
+      int tmp2 = tmp1 * 8 + 7 - (startBit % 8) + s.length - 1;
+      int tmp3 = tmp2 / 8;
+      startBit = tmp3 * 8 + 7 - tmp2 % 8;
+    }
+
+    int startIndex = startBit / 8;
+    int leftShift = startBit % 8;
     // pack the value by the type
     if (s.is_unsigned) {
-      long max = pow(2, s.length);
+      long max = pow(2, s.length) - 1;
       long min = 0;
       if (s.length <= 8) {
         PACKVALUEUNSIGNED(uint8_T);
@@ -125,7 +134,7 @@ void packSignal (const Signal &s, const double &value, uint8_T *data) {
         PACKVALUEUNSIGNED(uint64_T);
       }
     } else {
-      long max = pow(2, s.length) / 2;
+      long max = pow(2, s.length) / 2 - 1;
       long min = (-1) * max - 1;
       if (s.length <= 8) {
         PACKVALUESIGNED(int8_T);

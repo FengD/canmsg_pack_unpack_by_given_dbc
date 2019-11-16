@@ -16,42 +16,64 @@ int main() {
   string file3 = "/home/ding/Documents/doc/hirain/gangkou/report/CANoe/Lidar_other.dbc";
   string file = "/home/ding/Documents/doc/hirain/gangkou/report/CANoe/LaserObjs.dbc";
   string file1 = "/home/ding/Documents/doc/hirain/gangkou/report/CANoe/LidarFS_polar.dbc";
-  string file2 = "/home/ding/Documents/doc/hirain/gangkou/report/CANoe/Lidar_other.dbc";
+  // string file2 = "./HMI260.dbc";
    // dbcAnalysis;
   dbc_analysis::DbcAnalysis::getInstance()->addOneDbcFile(file);
   dbc_analysis::DbcAnalysis::getInstance()->addOneDbcFile(file1);
-  dbc_analysis::DbcAnalysis::getInstance()->addOneDbcFile(file2);
+  // dbc_analysis::DbcAnalysis::getInstance()->addOneDbcFile(file2);
   dbc_analysis::DbcAnalysis::getInstance()->addOneDbcFile(file3);
   dbc_analysis::DbcAnalysis::getInstance()->analysisFiles();
-  // dbcAnalysis.printMessages();
+  dbc_analysis::DbcAnalysis::getInstance()->printMessages();
 
-  double valueOut[4];
-  Canmsg test;
-  test.id = 1280;
-  test.length = 8;
-  test.data[0] = 0xe3;
-  test.data[1] = 0x01;
-  test.data[2] = 0xfa;
-  test.data[3] = 0x30;
-  test.data[4] = 0x7e;
-  test.data[5] = 0x8c;
-  test.data[6] = 0x00;
-  test.data[7] = 0x00;
-  can_util::unpackCanmsg(dbc_analysis::DbcAnalysis::getInstance()->getMessages()[test.id], test, 4, valueOut);
+  // double valueOut[3];
+  // Canmsg test;
+  // test.id = 2024;
+  // test.length = 8;
+  // test.data[0] = 255;
+  // test.data[1] = 255;
+  // test.data[2] = 224;
+  // test.data[3] = 193;
+  // test.data[4] = 0;
+  // test.data[5] = 7;
+  // test.data[6] = 83;
+  // test.data[7] = 0;
+  // can_util::unpackCanmsg(dbc_analysis::DbcAnalysis::getInstance()->getMessages()[test.id], test, 3, valueOut);
+  //
+  // for (int i = 0; i < 3; i++) {
+  //   printf("%lf ", valueOut[i]);
+  // }
+  // printf("\n");
 
-  for (int i = 0; i < 4; i++) {
-    printf("%lf ", valueOut[i]);
-  }
-  printf("\n");
 
-
-  float valueIn[4] = {-37.74, 81.92, -0.000002, -0.000002};
+  float valueIn1[4] = {10, 200, 19, 37};
   Canmsg msg = {0};
-  can_util::packCanmsg(dbc_analysis::DbcAnalysis::getInstance()->getMessages()[1280], 4, valueIn, &msg);
+  can_util::packCanmsg(dbc_analysis::DbcAnalysis::getInstance()->getMessages()[1280], 4, valueIn1, &msg);
 
   for (int i = 0; i < 8; i++) {
-    printf("%x ", msg.data[i]);
+    printf("%d ", msg.data[i]);
   }
   printf("\n");
+  msg = {0};
+  float valueIn2[3] = {-20, 0, 0.005};
+  can_util::packCanmsg(dbc_analysis::DbcAnalysis::getInstance()->getMessages()[2024], 3, valueIn2, &msg);
+  for (int i = 0; i < 8; i++) {
+    printf("%d ", msg.data[i]);
+  }
+  printf("\n");
+  msg = {0};
+  float valueIn3[4] = {22, 0, 1, 0};
+  can_util::packCanmsg(dbc_analysis::DbcAnalysis::getInstance()->getMessages()[2023], 4, valueIn3, &msg);
+  for (int i = 0; i < 8; i++) {
+    printf("%d ", msg.data[i]);
+  }
+  printf("\n");
+  msg = {0};
+  float valueIn4[6] = {1, 2, 1,20,15,1};
+  can_util::packCanmsg(dbc_analysis::DbcAnalysis::getInstance()->getMessages()[1024], 6, valueIn4, &msg);
+  for (int i = 0; i < 8; i++) {
+    printf("%d ", msg.data[i]);
+  }
+  printf("\n");
+
   return 0;
 }

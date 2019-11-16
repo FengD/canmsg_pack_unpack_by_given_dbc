@@ -21,7 +21,7 @@ if (s.dataType) {\
     shift++;\
     if (shift == 8) {\
       shift = 0;\
-      startIndex--;\
+      startIndex++;\
     }\
   }\
 } else {\
@@ -30,7 +30,7 @@ if (s.dataType) {\
     shift++;\
     if (shift == 8) {\
       shift = 0;\
-      startIndex++;\
+      startIndex--;\
     }\
   }\
 }\
@@ -68,6 +68,7 @@ real64_T unpackSignal (const Signal &s, const uint8_T *data) {
   //   factor                  = s.factor
   //   offset                  = s.offset
   //  -----------------------------------------------------------------------
+  
   int startIndex = s.startBit / 8;
   int shift = s.startBit % 8;
 
