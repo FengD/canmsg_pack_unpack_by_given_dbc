@@ -68,15 +68,24 @@ real64_T unpackSignal (const Signal &s, const uint8_T *data) {
   //   factor                  = s.factor
   //   offset                  = s.offset
   //  -----------------------------------------------------------------------
-  
-  int startIndex = s.startBit / 8;
-  int shift = s.startBit % 8;
+
+  int startBit = s.startBit;
+  // if the motolora type BEGENDIAN
+  if (!s.dataType) {
+    int tmp1 = startBit / 8;
+    int tmp2 = tmp1 * 8 + 7 - (startBit % 8) + s.length - 1;
+    int tmp3 = tmp2 / 8;
+    startBit = tmp3 * 8 + 7 - tmp2 % 8;
+  }
+
+  int startIndex = startBit / 8;
+  int shift = startBit % 8;
 
   real64_T outValue = 0;
   long bitValue = pow(2, s.length);
   double max, min;
   if (s.is_unsigned) {
-    max = bitValue * s.factor + s.offset;
+    max = (bitValue - 1) * s.factor + s.offset;
     min = 0.0 * s.factor + s.offset;
     if (s.length <= 8) {
       UNPACKVALUE(uint8_T);
@@ -88,8 +97,10 @@ real64_T unpackSignal (const Signal &s, const uint8_T *data) {
       UNPACKVALUE(uint64_T);
     }
   } else {
-    max = bitValue / 2.0  * s.factor + s.offset;
+    max = (bitValue / 2.0 - 1.0);
     min = (-1.0) * max - 1.0;
+    max = max * s.factor + s.offset;
+    min = min * s.factor + s.offset;
     if (s.length <= 8) {
       UNPACKVALUE(int8_T);
     } else if (s.length > 8 && s.length <= 16) {
