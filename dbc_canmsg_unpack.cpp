@@ -6,7 +6,7 @@
 */
 
 #include "dbc_canmsg_unpack.h"
-#include <iostream>
+#include <math.h>
 
 #define BITCALCULATEUNPACK \
 tempValue = tempValue | ((((data[startIndex]) & ( (uint8_T)\
