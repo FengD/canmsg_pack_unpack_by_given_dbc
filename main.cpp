@@ -13,6 +13,22 @@
 
 using namespace std;
 
+void valuesPack(const long &id, const int valueSize, const float *valueInput, Canmsg *msg) {
+  Message canMsgStruct = dbc_analysis::DbcAnalysis::getInstance()->getMessages()[id];
+  can_util::packCanmsg(canMsgStruct, valueSize, valueInput, msg);
+  msg->length = canMsgStruct.length;
+  msg->id = id;
+}
+
+void msgPrint(const Canmsg &msg) {
+  printf("id: %ld\n", msg.id);
+  printf("length: %d\n", msg.length);
+  for (int i = 0; i < 8; i++) {
+    printf("%d ", msg.data[i]);
+  }
+  printf("\n");
+}
+
 int main() {
   string folderpath = "./dbcs";
   std::vector<std::string> files;
@@ -91,33 +107,20 @@ int main() {
 
   float valueIn1[4] = {10, 200, 19, 37};
   Canmsg msg = {0};
-  can_util::packCanmsg(dbc_analysis::DbcAnalysis::getInstance()->getMessages()[1280], 4, valueIn1, &msg);
-
-  for (int i = 0; i < 8; i++) {
-    printf("%d ", msg.data[i]);
-  }
-  printf("\n");
+  valuesPack(1280, 4, valueIn1, &msg);
+  msgPrint(msg);
   msg = {0};
   float valueIn2[3] = {-20, 0, 0.005};
-  can_util::packCanmsg(dbc_analysis::DbcAnalysis::getInstance()->getMessages()[2024], 3, valueIn2, &msg);
-  for (int i = 0; i < 8; i++) {
-    printf("%d ", msg.data[i]);
-  }
-  printf("\n");
+  valuesPack(2024, 3, valueIn2, &msg);
+  msgPrint(msg);
   msg = {0};
   float valueIn3[4] = {22, 0, 1, 0};
-  can_util::packCanmsg(dbc_analysis::DbcAnalysis::getInstance()->getMessages()[2023], 4, valueIn3, &msg);
-  for (int i = 0; i < 8; i++) {
-    printf("%d ", msg.data[i]);
-  }
-  printf("\n");
+  valuesPack(2023, 4, valueIn3, &msg);
+  msgPrint(msg);
   msg = {0};
   float valueIn4[6] = {1, 2, 1,20,15,1};
-  can_util::packCanmsg(dbc_analysis::DbcAnalysis::getInstance()->getMessages()[1024], 6, valueIn4, &msg);
-  for (int i = 0; i < 8; i++) {
-    printf("%d ", msg.data[i]);
-  }
-  printf("\n");
+  valuesPack(1024, 6, valueIn4, &msg);
+  msgPrint(msg);
 
   return 0;
 }
