@@ -11,7 +11,7 @@
 #include <map>
 #include <string>
 #include <string.h>
-#include "struct_define.h"
+#include "canmsg_define.h"
 
 namespace can_util {
 

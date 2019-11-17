@@ -1,5 +1,5 @@
-#ifndef _STRUCT_DEFINE_H_
-#define _STRUCT_DEFINE_H_ 1
+#ifndef _CANMSG_DEFINE_H_
+#define _CANMSG_DEFINE_H_
 
 #include <vector>
 #include <map>
@@ -72,4 +72,4 @@ struct Canmsg {
   uint8_T  data[8];
 };
 
-#endif //_STRUCT_DEFINE_H_
+#endif //_CANMSG_DEFINE_H_

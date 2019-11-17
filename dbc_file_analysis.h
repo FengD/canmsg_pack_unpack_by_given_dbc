@@ -12,7 +12,7 @@
 #include <string>
 #include <iostream>
 #include <pthread.h>
-#include "struct_define.h"
+#include "canmsg_define.h"
 
 #define MSSAGEHEAD "BO_"
 #define SIGNALHEAD "SG_"

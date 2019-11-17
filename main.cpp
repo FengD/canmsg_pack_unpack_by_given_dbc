@@ -8,7 +8,7 @@
 #include "dbc_file_analysis.h"
 #include "dbc_canmsg_unpack.h"
 #include "dbc_canmsg_pack.h"
-#include "struct_define.h"
+#include "canmsg_define.h"
 
 using namespace std;
 
