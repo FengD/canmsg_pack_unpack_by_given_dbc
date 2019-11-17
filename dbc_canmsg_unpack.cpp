@@ -70,12 +70,14 @@ real64_T unpackSignal (const Signal &s, const uint8_T *data) {
   //  -----------------------------------------------------------------------
 
   int startBit = s.startBit;
-  // if the motolora type BEGENDIAN
-  if (!s.dataType) {
-    int tmp1 = startBit / 8;
-    int tmp2 = tmp1 * 8 + 7 - (startBit % 8) + s.length - 1;
-    int tmp3 = tmp2 / 8;
-    startBit = tmp3 * 8 + 7 - tmp2 % 8;
+  {
+    // if the motolora type <BEGENDIAN> the startbit needs to be recalculated
+    if (!s.dataType) {
+      int tmp1 = startBit / 8;
+      int tmp2 = tmp1 * 8 + 7 - (startBit % 8) + s.length - 1;
+      int tmp3 = tmp2 / 8;
+      startBit = tmp3 * 8 + 7 - tmp2 % 8;
+    }
   }
 
   int startIndex = startBit / 8;
@@ -111,6 +113,8 @@ real64_T unpackSignal (const Signal &s, const uint8_T *data) {
       UNPACKVALUE(int64_T);
     }
   }
+
+  // TODO mask for the signed value
 
   real64_T result = (real64_T) outValue;
   result = (result * s.factor) + s.offset;
