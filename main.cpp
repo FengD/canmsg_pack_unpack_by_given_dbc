@@ -9,19 +9,24 @@
 #include "dbc_canmsg_unpack.h"
 #include "dbc_canmsg_pack.h"
 #include "canmsg_define.h"
+#include "util.h"
 
 using namespace std;
 
 int main() {
-  string file3 = "/home/ding/Documents/doc/hirain/gangkou/report/CANoe/Lidar_other.dbc";
-  string file = "/home/ding/Documents/doc/hirain/gangkou/report/CANoe/LaserObjs.dbc";
-  string file1 = "/home/ding/Documents/doc/hirain/gangkou/report/CANoe/LidarFS_polar.dbc";
+  string folderpath = "./dbcs";
+  std::vector<std::string> files;
+  getAllFilesInFolder(folderpath, &files);
+  for (std::string &file : files) {
+    std::cout << file << std::endl;
+    dbc_analysis::DbcAnalysis::getInstance()->addOneDbcFile(file);
+  }
   // string file2 = "./HMI260.dbc";
    // dbcAnalysis;
-  dbc_analysis::DbcAnalysis::getInstance()->addOneDbcFile(file);
-  dbc_analysis::DbcAnalysis::getInstance()->addOneDbcFile(file1);
-  // dbc_analysis::DbcAnalysis::getInstance()->addOneDbcFile(file2);
-  dbc_analysis::DbcAnalysis::getInstance()->addOneDbcFile(file3);
+  // dbc_analysis::DbcAnalysis::getInstance()->addOneDbcFile(file);
+  // dbc_analysis::DbcAnalysis::getInstance()->addOneDbcFile(file1);
+  // // dbc_analysis::DbcAnalysis::getInstance()->addOneDbcFile(file2);
+  // dbc_analysis::DbcAnalysis::getInstance()->addOneDbcFile(file3);
   dbc_analysis::DbcAnalysis::getInstance()->analysisFiles();
   dbc_analysis::DbcAnalysis::getInstance()->printMessages();
 

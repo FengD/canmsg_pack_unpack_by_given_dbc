@@ -14,6 +14,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 
 typedef std::string::size_type string_size;
 
@@ -53,4 +56,34 @@ void split(const std::string &s, const std::string &seperator, std::vector<std::
       i = j;
     }
   }
+}
+
+void getAllFilesInFolder(const std::string& dir_in, std::vector<std::string> *files) {
+  if (dir_in.empty()) {
+    return;
+  }
+  struct stat s;
+  stat(dir_in.c_str(), &s);
+  if (!S_ISDIR(s.st_mode)) {
+    return;
+  }
+  DIR* open_dir = opendir(dir_in.c_str());
+  if (NULL == open_dir) {
+    std::exit(EXIT_FAILURE);
+  }
+  dirent* p = nullptr;
+  while( (p = readdir(open_dir)) != nullptr) {
+    struct stat st;
+    if (p->d_name[0] != '.') {
+      std::string name = dir_in + std::string("/") + std::string(p->d_name);
+      stat(name.c_str(), &st);
+      if (S_ISDIR(st.st_mode)) {
+        getAllFilesInFolder(name, files);
+      }
+      else if (S_ISREG(st.st_mode)) {
+        files->push_back(name);
+      }
+    }
+  }
+  closedir(open_dir);
 }
