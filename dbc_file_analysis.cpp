@@ -50,7 +50,6 @@ void DbcAnalysis::transformSignalFromLine(std::string line, Message &m) {
   // remove the ":" in the line
   line.erase(std::remove(line.begin(), line.end(), ':'), line.end());
   std::vector<std::string> strSplited;
-  std::cout << line << std::endl;
   split(line, " ", &strSplited);
   int counter = 0;
   for(std::vector<std::string>::iterator info = strSplited.begin(); info != strSplited.end(); ++counter, info++) {
