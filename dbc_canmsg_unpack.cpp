@@ -8,16 +8,16 @@
 #include "dbc_canmsg_unpack.h"
 #include <math.h>
 
-#define BITCALCULATEUNPACK \
-tempValue = tempValue | ((((data[startIndex]) & ( (uint8_T)\
+#define BITCALCULATEUNPACK(type) \
+tempValue = tempValue | (type)((type)((type)((data[startIndex]) & (type) ((type)\
                         (1)<< shift)) >> shift)<<i);
 
-#define UNPACKVALUE(type) \
+#define UNPACKVALUE(unsignedType, type) \
 type unpackedValue = 0;\
-type tempValue = (type) (0);\
+unsignedType tempValue = (unsignedType) (0);\
 if (s.dataType) {\
   for (int i = 0; i < s.length; i++) {\
-    BITCALCULATEUNPACK;\
+    BITCALCULATEUNPACK(unsignedType);\
     shift++;\
     if (shift == 8) {\
       shift = 0;\
@@ -26,7 +26,7 @@ if (s.dataType) {\
   }\
 } else {\
   for (int i = 0; i < s.length; i++) {\
-    BITCALCULATEUNPACK;\
+    BITCALCULATEUNPACK(unsignedType);\
     shift++;\
     if (shift == 8) {\
       shift = 0;\
@@ -34,7 +34,16 @@ if (s.dataType) {\
     }\
   }\
 }\
-unpackedValue = tempValue;\
+unsignedType mask = (unsignedType)(1);\
+unsignedType bitValue = tempValue & (unsignedType) (mask << (s.length - 1));\
+if (bitValue != 0) {\
+  int len = 8 - s.length % 8;\
+  int tmp = (s.length / 8 + 1) * 8;\
+  for (int i = 0; i < len; i++) {\
+    tempValue = tempValue | (unsignedType) (mask << (tmp - i - 1));\
+  }\
+}\
+unpackedValue = (type) tempValue;\
 outValue = (real64_T) (unpackedValue);
 
 namespace can_util {
@@ -90,13 +99,13 @@ real64_T unpackSignal (const Signal &s, const uint8_T *data) {
     max = (bitValue - 1) * s.factor + s.offset;
     min = 0.0 * s.factor + s.offset;
     if (s.length <= 8) {
-      UNPACKVALUE(uint8_T);
+      UNPACKVALUE(uint8_T, uint8_T);
     } else if (s.length > 8 && s.length <= 16) {
-      UNPACKVALUE(uint16_T);
+      UNPACKVALUE(uint16_T, uint16_T);
     } else if (s.length > 16 && s.length <= 32) {
-      UNPACKVALUE(uint32_T);
+      UNPACKVALUE(uint32_T, uint32_T);
     } else if (s.length > 32) {
-      UNPACKVALUE(uint64_T);
+      UNPACKVALUE(uint64_T, uint64_T);
     }
   } else {
     max = (bitValue / 2.0 - 1.0);
@@ -104,18 +113,17 @@ real64_T unpackSignal (const Signal &s, const uint8_T *data) {
     max = max * s.factor + s.offset;
     min = min * s.factor + s.offset;
     if (s.length <= 8) {
-      UNPACKVALUE(int8_T);
+      UNPACKVALUE(uint8_T, int8_T);
     } else if (s.length > 8 && s.length <= 16) {
-      UNPACKVALUE(int16_T);
+      UNPACKVALUE(uint16_T, int16_T);
     } else if (s.length > 16 && s.length <= 32) {
-      UNPACKVALUE(int32_T);
+      UNPACKVALUE(uint32_T, int32_T);
     } else if (s.length > 32) {
-      UNPACKVALUE(int64_T);
+      UNPACKVALUE(uint64_T, int64_T);
     }
   }
 
   // TODO mask for the signed value
-
   real64_T result = (real64_T) outValue;
   result = (result * s.factor) + s.offset;
   if (result < min) {

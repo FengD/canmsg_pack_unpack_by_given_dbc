@@ -98,6 +98,3 @@ msg.data[1] = 19;
 can_util::unpackCanmsg(canMsgStruct, msg, 4, valueOut);
 // unpack end
 ```
-
-## Attention
-Still has bugs for unpack signed signals. The pack module is good. The unpack could be used if all the signals are unsigned.
