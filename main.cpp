@@ -38,11 +38,11 @@ int main() {
   }
 
   dbc_analysis::DbcAnalysis::getInstance()->analysisFiles();
-  dbc_analysis::DbcAnalysis::getInstance()->printMessages();
+  // dbc_analysis::DbcAnalysis::getInstance()->printMessages();
 
-  double valueOut1[4];
+  double valueOut1[3];
   Canmsg test;
-  test.id = 1280;
+  test.id = 2020;
   test.length = 8;
   test.data[0] = 136;
   test.data[1] = 19;
@@ -51,15 +51,15 @@ int main() {
   test.data[4] = 113;
   test.data[5] = 98;
   test.data[6] = 184;
-  can_util::unpackCanmsg(dbc_analysis::DbcAnalysis::getInstance()->getMessages()[test.id], test, 4, valueOut1);
-  for (int i = 0; i < 4; i++) {
+  can_util::unpackCanmsg(dbc_analysis::DbcAnalysis::getInstance()->getMessages()[test.id], test, 3, valueOut1);
+  for (int i = 0; i < 3; i++) {
     printf("%lf ", valueOut1[i]);
   }
   printf("\n");
 
-  double valueIn1[4] = {10, 200, 19, 37};
+  double valueIn1[3] = {10, 200, 19};
   Canmsg msg = {0};
-  valuesPack(1280, 4, valueIn1, &msg);
+  valuesPack(2020, 3, valueIn1, &msg);
   msgPrint(msg);
 
   return 0;

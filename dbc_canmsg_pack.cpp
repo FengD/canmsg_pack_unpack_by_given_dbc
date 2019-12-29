@@ -7,6 +7,7 @@
 
 #include "dbc_canmsg_pack.h"
 #include <math.h>
+#include <algorithm>
 
 #define BITCALCULATEPACK(type) \
 data[startIndex] = data[startIndex] | (uint8_T)((uint8_T) \
@@ -61,20 +62,21 @@ TYPECALCULATEBITUNPACK(type)
 
 namespace can_util {
 
-void packCanmsg (const Message &m, const size_t &valueSize, const double *value, Canmsg *msg) {
+int packCanmsg (const Message &m, const size_t &valueSize, const double *value, Canmsg *msg) {
   // if the message has the correct number of signals
   if (valueSize != m.signals.size()) {
-    printf("value given error\n");
-    return;
+    perror("value given error\n");
+    return VALUE_SIZE_NOT_MATCHING;
   }
   msg->id = m.id;
   msg->length = m.length;
   int index = 0;
-  // pack values
-  for (std::vector<Signal>::const_iterator s = m.signals.begin(); s != m.signals.end(); s++) {
-    packSignal(*s, value[index], msg->data);
+  std::for_each(m.signals.begin(), m.signals.end(), [&](Signal s){
+    packSignal(s, value[index], msg->data);
     index++;
-  }
+  });
+
+  return PACK_SUCCESS;
 }
 
 void packSignal (const Signal &s, const double &value, uint8_T *data) {
@@ -87,22 +89,15 @@ void packSignal (const Signal &s, const double &value, uint8_T *data) {
   //   offset                  = s.offset
   //   minimum                 = s.maximum
   //   maximum                 = s.minimum
-  //  -----------------------------------------------------------------------
+  //  ------------------------------------------------------
   {
     real64_T outValue = 0;
     {
       real64_T result = value;
       // check the maximum & minimum
       if (fabs(s.minimum - 0.0) > DELTA || fabs(s.maximum - 0.0) > DELTA) {
-        if (result < s.minimum) {
-          // lower saturation
-          result = s.minimum;
-        }
-
-        if (result > s.maximum) {
-          // upper saturation
-          result = s.maximum;
-        }
+        result = result < s.minimum ? s.minimum : result;
+        result = result > s.maximum ? s.maximum : result;
       }
 
       result = (result - s.offset) / s.factor;
