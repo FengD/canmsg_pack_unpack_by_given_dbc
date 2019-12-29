@@ -35,12 +35,10 @@ struct Signal {
 	int is_unsigned;
 	std::string unit;
 
-	bool operator <(const Signal& s) const // 升序排序时必须写的函数
-  {
+	bool operator <(const Signal& s) const {
       return startBit < s.startBit;
   }
-  bool operator >(const Signal& s) const // 降序排序时必须写的函数
-  {
+  bool operator >(const Signal& s) const {
       return startBit > s.startBit;
   }
 };
@@ -51,12 +49,10 @@ struct Message {
 	int length;
 	std::vector<Signal> signals;
 
-	bool operator <(const Message& msg) const // 升序排序时必须写的函数
-  {
+	bool operator <(const Message& msg) const {
       return id < msg.id;
   }
-  bool operator >(const Message& msg) const // 降序排序时必须写的函数
-  {
+  bool operator >(const Message& msg) const {
       return id > msg.id;
   }
 };

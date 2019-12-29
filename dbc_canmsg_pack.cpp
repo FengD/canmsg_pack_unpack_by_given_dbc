@@ -61,7 +61,7 @@ TYPECALCULATEBITUNPACK(type)
 
 namespace can_util {
 
-void packCanmsg (const Message &m, const size_t &valueSize, const float *value, Canmsg *msg) {
+void packCanmsg (const Message &m, const size_t &valueSize, const double *value, Canmsg *msg) {
   // if the message has the correct number of signals
   if (valueSize != m.signals.size()) {
     printf("value given error\n");

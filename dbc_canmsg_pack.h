@@ -20,7 +20,7 @@ namespace can_util {
 * @param in [float array] the array of the values
 * @param out [struct Canmsg] the canmsg
 */
-void packCanmsg (const Message &m, const size_t &valueSize, const float *value, Canmsg *msg);
+void packCanmsg (const Message &m, const size_t &valueSize, const double *value, Canmsg *msg);
 
 /**
 * pack one Signal

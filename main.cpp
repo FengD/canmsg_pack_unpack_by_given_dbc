@@ -13,7 +13,7 @@
 
 using namespace std;
 
-void valuesPack(const long &id, const int valueSize, const float *valueInput, Canmsg *msg) {
+void valuesPack(const long &id, const int valueSize, const double *valueInput, Canmsg *msg) {
   Message canMsgStruct = dbc_analysis::DbcAnalysis::getInstance()->getMessages()[id];
   can_util::packCanmsg(canMsgStruct, valueSize, valueInput, msg);
   msg->length = canMsgStruct.length;
@@ -57,7 +57,7 @@ int main() {
   }
   printf("\n");
 
-  float valueIn1[4] = {10, 200, 19, 37};
+  double valueIn1[4] = {10, 200, 19, 37};
   Canmsg msg = {0};
   valuesPack(1280, 4, valueIn1, &msg);
   msgPrint(msg);

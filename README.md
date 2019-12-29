@@ -59,7 +59,7 @@ real64_T unpackSignal (const Signal &s, const uint8_T *data);
 * @param in [float array] the array of the values
 * @param out [struct Canmsg] the canmsg
 */
-void packCanmsg (const Message &m, const size_t &valueSize, const float *value, Canmsg *msg);
+void packCanmsg (const Message &m, const size_t &valueSize, const double *value, Canmsg *msg);
 /**
 * pack one Signal
 * @param in [struct Signal] the Signal that you want to pack
@@ -84,7 +84,7 @@ dbc_analysis::DbcAnalysis::getInstance()->printMessages();
 // get one message by id
 Message canMsgStruct = dbc_analysis::DbcAnalysis::getInstance()->getMessages()[id];
 // pack
-float valueIn[4] = {10, 200, 19, 37};
+double valueIn[4] = {10, 200, 19, 37};
 Canmsg msg = {0};
 can_util::packCanmsg(canMsgStruct, 4, valueIn, msg);
 // pack end
