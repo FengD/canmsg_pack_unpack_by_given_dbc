@@ -36,7 +36,7 @@ if (s.dataType) {\
 }\
 unsignedType mask = (unsignedType)(1);\
 unsignedType bitValue = tempValue & (unsignedType) (mask << (s.length - 1));\
-if (bitValue != 0) {\
+if (bitValue != 0 && !s.is_unsigned) {\
   int len = 8 - s.length % 8;\
   int tmp = (s.length / 8 + 1) * 8;\
   for (int i = 0; i < len; i++) {\
