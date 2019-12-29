@@ -15,7 +15,7 @@
 namespace can_util {
 
 enum PackStat {
-  VALUE_SIZE_NOT_MATCHING = -1,
+  PACK_VALUE_SIZE_NOT_MATCHING = -1,
   PACK_SUCCESS = 0
 };
 

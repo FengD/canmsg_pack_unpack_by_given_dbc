@@ -66,7 +66,7 @@ int packCanmsg (const Message &m, const size_t &valueSize, const double *value, 
   // if the message has the correct number of signals
   if (valueSize != m.signals.size()) {
     perror("value given error\n");
-    return VALUE_SIZE_NOT_MATCHING;
+    return PACK_VALUE_SIZE_NOT_MATCHING;
   }
   msg->id = m.id;
   msg->length = m.length;

@@ -48,24 +48,29 @@ outValue = (real64_T) (unpackedValue);
 
 namespace can_util {
 
-void unpackCanmsg (const Message &m, const Canmsg &msg, const size_t valueSize, double *value) {
-  // if the message has the correct number of signals
+int unpackCanmsg (const Message &m, const Canmsg &msg, const size_t valueSize, double *value) {
   if (valueSize != m.signals.size()) {
-    printf("value given error\n");
-    return;
+    perror("value given error\n");
+    return UNPACK_VALUE_SIZE_NOT_MATCHING;
   }
-  // double check the id and the length
-  if (m.id != msg.id || m.length != msg.length) {
-    printf("canmsg length or id error\n");
-    return;
+
+  if (m.id != msg.id) {
+    perror("canmsg id mismatch\n");
+    return UNPACK_MESSAGE_ID_MISMATCH;
+  }
+
+  if (m.length != msg.length) {
+    perror("canmsg length mismatch\n");
+    return UNPACK_MESSAGE_DATA_LEN_MISMATCH;
   }
 
   int index = 0;
-  // unpack the signals
-  for (std::vector<Signal>::const_iterator s = m.signals.begin(); s != m.signals.end(); s++) {
-    value[index] = unpackSignal(*s, msg.data);
+  std::for_each(m.signals.begin(), m.signals.end(), [&](Signal s){
+    value[index] = unpackSignal(s, msg.data);
     index++;
-  }
+  });
+
+  return UNPACK_SUCCESS;
 }
 
 real64_T unpackSignal (const Signal &s, const uint8_T *data) {
@@ -126,13 +131,9 @@ real64_T unpackSignal (const Signal &s, const uint8_T *data) {
   // TODO mask for the signed value
   real64_T result = (real64_T) outValue;
   result = (result * s.factor) + s.offset;
-  if (result < min) {
-    result = min;
-  }
 
-  if (result > max) {
-    result = max;
-  }
+  result = result < min ? min : result;
+  result = result > max ? max : result;
 
   return result;
 }
