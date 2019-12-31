@@ -7,7 +7,6 @@
 
 #include "dbc_canmsg_pack.h"
 #include <math.h>
-#include <algorithm>
 
 #define BITCALCULATEPACK(type) \
 data[startIndex] = data[startIndex] | (uint8_T)((uint8_T) \
@@ -65,8 +64,8 @@ namespace can_util {
 int packCanmsg (const Message &m, const size_t &valueSize, const double *value, Canmsg *msg) {
   // if the message has the correct number of signals
   if (valueSize != m.signals.size()) {
-    perror("value given error\n");
-    return PACK_VALUE_SIZE_NOT_MATCHING;
+    printf("[%ld] value given error\n", m.id);
+    return SIGNAL_SIZE_MISMATCH;
   }
   msg->id = m.id;
   msg->length = m.length;
@@ -75,8 +74,7 @@ int packCanmsg (const Message &m, const size_t &valueSize, const double *value, 
     packSignal(s, value[index], msg->data);
     index++;
   });
-
-  return PACK_SUCCESS;
+  return PACK_UNPACK_SUCCESS;
 }
 
 void packSignal (const Signal &s, const double &value, uint8_T *data) {
@@ -89,7 +87,7 @@ void packSignal (const Signal &s, const double &value, uint8_T *data) {
   //   offset                  = s.offset
   //   minimum                 = s.maximum
   //   maximum                 = s.minimum
-  //  ------------------------------------------------------
+  //  -----------------------------------------------------------------------
   {
     real64_T outValue = 0;
     {
@@ -98,6 +96,15 @@ void packSignal (const Signal &s, const double &value, uint8_T *data) {
       if (fabs(s.minimum - 0.0) > DELTA || fabs(s.maximum - 0.0) > DELTA) {
         result = result < s.minimum ? s.minimum : result;
         result = result > s.maximum ? s.maximum : result;
+        // if (result < s.minimum) {
+        //   // lower saturation
+        //   result = s.minimum;
+        // }
+        //
+        // if (result > s.maximum) {
+        //   // upper saturation
+        //   result = s.maximum;
+        // }
       }
 
       result = (result - s.offset) / s.factor;

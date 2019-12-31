@@ -50,18 +50,18 @@ namespace can_util {
 
 int unpackCanmsg (const Message &m, const Canmsg &msg, const size_t valueSize, double *value) {
   if (valueSize != m.signals.size()) {
-    perror("value given error\n");
-    return UNPACK_VALUE_SIZE_NOT_MATCHING;
+    printf("value given error\n");
+    return SIGNAL_SIZE_MISMATCH;
   }
-
+  // double check the id and the length
   if (m.id != msg.id) {
-    perror("canmsg id mismatch\n");
-    return UNPACK_MESSAGE_ID_MISMATCH;
+    printf("canmsg id mismatch, %ld need but %ld given\n", m.id, msg.id);
+    return UNPACK_ID_MISMATCH;
   }
 
   if (m.length != msg.length) {
-    perror("canmsg length mismatch\n");
-    return UNPACK_MESSAGE_DATA_LEN_MISMATCH;
+    printf("canmsg length mismatch, %d need but %d given\n", m.length, msg.length);
+    return UNPACK_LENGTH_MISMATCH;
   }
 
   int index = 0;
@@ -69,8 +69,7 @@ int unpackCanmsg (const Message &m, const Canmsg &msg, const size_t valueSize, d
     value[index] = unpackSignal(s, msg.data);
     index++;
   });
-
-  return UNPACK_SUCCESS;
+  return PACK_UNPACK_SUCCESS;
 }
 
 real64_T unpackSignal (const Signal &s, const uint8_T *data) {
@@ -128,10 +127,8 @@ real64_T unpackSignal (const Signal &s, const uint8_T *data) {
     }
   }
 
-  // TODO mask for the signed value
   real64_T result = (real64_T) outValue;
   result = (result * s.factor) + s.offset;
-
   result = result < min ? min : result;
   result = result > max ? max : result;
 

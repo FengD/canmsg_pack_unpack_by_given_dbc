@@ -35,10 +35,12 @@ struct Signal {
 	int is_unsigned;
 	std::string unit;
 
-	bool operator <(const Signal& s) const {
+	bool operator <(const Signal& s) const // 升序排序时必须写的函数
+  {
       return startBit < s.startBit;
   }
-  bool operator >(const Signal& s) const {
+  bool operator >(const Signal& s) const // 降序排序时必须写的函数
+  {
       return startBit > s.startBit;
   }
 };
@@ -49,23 +51,27 @@ struct Message {
 	int length;
 	std::vector<Signal> signals;
 
-	bool operator <(const Message& msg) const {
+	bool operator <(const Message& msg) const // 升序排序时必须写的函数
+  {
       return id < msg.id;
   }
-  bool operator >(const Message& msg) const {
+  bool operator >(const Message& msg) const // 降序排序时必须写的函数
+  {
       return id > msg.id;
   }
 };
-
-// struct message_value {
-//   long id;
-//   std::map<std::string, double> signals;
-// };
 
 struct Canmsg {
   long id;
   int  length;
   uint8_T  data[8];
+};
+
+enum PackUnpackStat {
+	SIGNAL_SIZE_MISMATCH = -3,
+	UNPACK_ID_MISMATCH = -2,
+	UNPACK_LENGTH_MISMATCH = -1,
+	PACK_UNPACK_SUCCESS = 0
 };
 
 #endif //_CANMSG_DEFINE_H_

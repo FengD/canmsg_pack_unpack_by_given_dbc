@@ -15,17 +15,12 @@
 
 namespace can_util {
 
-enum UnpackStat {
-  UNPACK_MESSAGE_ID_MISMATCH = -3,
-  UNPACK_MESSAGE_DATA_LEN_MISMATCH = -2,
-  UNPACK_VALUE_SIZE_NOT_MATCHING = -1,
-  UNPACK_SUCCESS = 0
-};
 /** the dbc unpack used to transform the can msg to value
 * @param in [struct Message] the message that you want to unpack
 * @param in [struct Canmsg] the canmsg
 * @param in [unsigned int] the size of the value list
 * @param out [double array] the array of the values
+* @return [int] stat
 */
 int unpackCanmsg (const Message &m, const Canmsg &msg, const size_t valueSize, double *value);
 

@@ -36,32 +36,11 @@ class DbcAnalysis {
   static pthread_mutex_t mutex;
 
  public:
-  /**
-  * Singleton interface.
-  * @return [DbcAnalysis]
-  */
   static DbcAnalysis *getInstance();
-
-  /**
-  * Print the information of all the messages and the signals found from the DBC files.
-  */
 	void printMessages();
-
-  /**
-  * This method is used to execute the analysis action.
-  */
-  void analysisFiles();
-
-  /**
-  * And one DBC file.
-  */
-  void addOneDbcFile(const std::string &filePath);
-
-  /**
-  * Get the map of the can message list.
-  * @return [map<id, message>] the map of the messages.
-  */
-  std::map<long, Message>& getMessages();
+	void analysisFiles();
+	void addOneDbcFile(const std::string &filePath);
+	std::map<long, Message>& getMessages();
 };
 } // namespace dbc_analysis
 

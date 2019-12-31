@@ -12,19 +12,15 @@
 #include <string>
 #include <string.h>
 #include "canmsg_define.h"
-namespace can_util {
 
-enum PackStat {
-  PACK_VALUE_SIZE_NOT_MATCHING = -1,
-  PACK_SUCCESS = 0
-};
+namespace can_util {
 
 /** the dbc pack used to transform the value to can msg
 * @param in [struct Message] the message that you want to pack
 * @param in [unsigned int] the size of the value list
 * @param in [float array] the array of the values
 * @param out [struct Canmsg] the canmsg
-* @reture [int] stat of pack
+* @return [int] stat pack
 */
 int packCanmsg (const Message &m, const size_t &valueSize, const double *value, Canmsg *msg);
 

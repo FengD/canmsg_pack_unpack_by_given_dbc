@@ -19,7 +19,9 @@ DbcAnalysis::~DbcAnalysis() { }
 
 DbcAnalysis::DbcAnalysis(const DbcAnalysis&) { }
 
-DbcAnalysis& DbcAnalysis::operator=(const DbcAnalysis&) { }
+DbcAnalysis& DbcAnalysis::operator=(const DbcAnalysis&) {
+  return *this;
+}
 
 void DbcAnalysis::transformMessageFromLine(std::string line, Message &m) {
   // remove the ":" in the line

@@ -42,24 +42,25 @@ int main() {
 
   double valueOut1[3];
   Canmsg test;
-  test.id = 2020;
+  test.id = 2021;
   test.length = 8;
-  test.data[0] = 136;
-  test.data[1] = 19;
-  test.data[2] = 166;
-  test.data[3] = 14;
-  test.data[4] = 113;
-  test.data[5] = 98;
-  test.data[6] = 184;
+  test.data[0] = 255;
+  test.data[1] = 255;
+  test.data[2] = 231;
+  test.data[3] = 63;
+  test.data[4] = 255;
+  test.data[5] = 243;
+  test.data[6] = 143;
+  test.data[7] = 159;
   can_util::unpackCanmsg(dbc_analysis::DbcAnalysis::getInstance()->getMessages()[test.id], test, 3, valueOut1);
   for (int i = 0; i < 3; i++) {
     printf("%lf ", valueOut1[i]);
   }
   printf("\n");
 
-  double valueIn1[3] = {10, 200, 19};
+  double valueIn1[3] = {-1, -2, 400};
   Canmsg msg = {0};
-  valuesPack(2020, 3, valueIn1, &msg);
+  valuesPack(2021, 3, valueIn1, &msg);
   msgPrint(msg);
 
   return 0;
