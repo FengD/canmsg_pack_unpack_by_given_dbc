@@ -16,9 +16,9 @@
 namespace can_util {
 
 /** the dbc pack used to transform the value to can msg
-* @param in [struct Message] the message that you want to pack
-* @param in [unsigned int] the size of the value list
-* @param in [float array] the array of the values
+* @param in_ [struct Message] the message that you want to pack
+* @param in_ [unsigned int] the size of the value list
+* @param in_ [float array] the array of the values
 * @param out [struct Canmsg] the canmsg
 * @return [int] stat pack
 */
@@ -26,12 +26,12 @@ int packCanmsg (const Message &m, const size_t &valueSize, const double *value, 
 
 /**
 * pack one Signal
-* @param in [struct Signal] the Signal that you want to pack
-* @param in [double] the value that you want to pack in the Signal
+* @param in_ [struct Signal] the Signal that you want to pack
+* @param in_ [double] the value that you want to pack in_ the Signal
 * @param out [unsigned char array] the data array of the can msg
 */
 void packSignal (const Signal &s, const double &value, uint8_T *data);
 
-} // namespace can_util
+}  // namespace can_util
 
-#endif //_DBC_CANMSG_PACK_H_
+#endif  //_DBC_CANMSG_PACK_H_

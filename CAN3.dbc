@@ -1,0 +1,1461 @@
+VERSION ""
+NS_ :
+NS_DESC_
+CM_
+BA_DEF_
+BA_
+VAL_
+CAT_DEF_
+CAT_
+FILTER
+BA_DEF_DEF_
+EV_DATA_
+ENVVAR_DATA_
+SGTYPE_
+SGTYPE_VAL_
+BA_DEF_SGTYPE_
+BA_SGTYPE_
+SIG_TYPE_REF_
+VAL_TABLE_
+SIG_GROUP_
+SIG_VALTYPE_
+SIGTYPE_VALTYPE_
+BO_TX_BU_
+BA_DEF_REL_
+BA_REL_
+BA_DEF_DEF_REL_
+BU_SG_REL_
+BU_EV_REL_
+BU_BO_REL_
+SG_MUL_VAL_
+BS_:
+BU_:
+BO_ 2163251494 SyncMessage3: 8 ADU
+ SG_ adu_SyncMsgcounter : 0|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 773 ADU_LLCmsg: 8 ADU
+ SG_ CIPO_ID : 7|8@0+ (1,0) [0|255.0] "" Vector__XXX
+ SG_ CIPO_longDis : 15|14@0+ (0.01,-20) [-20|143.83] "m" Vector__XXX
+ SG_ CIPO_latDis : 17|5@0+ (0.02,0) [0|0.62] "m" Vector__XXX
+ SG_ CIPO_relVx : 28|8@0- (0.12,0) [-15.36|15.24] "mps" Vector__XXX
+ SG_ ev : 34|7@0- (0.01,0) [-0.64|0.63] "m" Vector__XXX
+ SG_ ADU_rised : 35|1@0+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ objectVx : 43|8@0- (0.5,0) [-64.0|63.5] "kmph" Vector__XXX
+ SG_ LDC_State : 51|4@0+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ VxTarget : 62|7@0+ (0.5,-10) [-10|53.5] "kmph" Vector__XXX
+ SG_ ADU_status : 63|1@0+ (1,0) [0|1.0] "" Vector__XXX
+BO_ 2003 ADU_CounterB: 8 ADU
+ SG_ counterB : 0|16@1+ (1,0) [0|65535.0] "" Vector__XXX
+BO_ 2005 ADU_CounterA: 8 ADU
+ SG_ counterA : 0|16@1+ (1,0) [0|65535.0] "" Vector__XXX
+BO_ 2007 ADU_Acore_enable: 1 ADU
+ SG_ enable_after_navi : 1|2@0+ (1,0) [0|3.0] "" Vector__XXX
+ SG_ enable_before_navi : 3|2@0+ (1,0) [0|3.0] "" Vector__XXX
+ SG_ LaneActive : 5|2@0+ (1,0) [0|3.0] "" Vector__XXX
+BO_ 2047 ADU_Version: 8 ADU
+ SG_ year : 7|12@0+ (1,0) [0|4095.0] "" Vector__XXX
+ SG_ month : 11|4@0+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ Test_Version : 18|3@0+ (1,0) [0|7.0] "" Vector__XXX
+ SG_ day : 23|5@0+ (1,0) [0|31.0] "" Vector__XXX
+ SG_ verNum : 31|16@0+ (1,0) [0|65535.0] "" Vector__XXX
+ SG_ VehicleNum : 47|16@0+ (1,0) [0|65535.0] "" Vector__XXX
+BO_ 771 ADU_car_XY: 8 ADU
+ SG_ carx : 7|26@0- (0.01,0) [-335544.32|335544.31] "m" Vector__XXX
+ SG_ cary : 29|26@0- (0.01,0) [-335544.32|335544.31] "m" Vector__XXX
+ SG_ caryaw : 51|12@0+ (0.1,0) [0|409.5] "deg" Vector__XXX
+BO_ 2684291074 ADU_AcoreDiag: 8 ADU
+ SG_ CAM_DiagFlag : 0|4@1+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ ESR_DiagFlag : 4|4@1+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ LiDARfs_DiagFlag : 8|2@1+ (1,0) [0|3.0] "" Vector__XXX
+ SG_ LiDARobject_DiagFlag : 10|2@1+ (1,0) [0|3.0] "" Vector__XXX
+ SG_ LidarLeft_state : 12|2@1+ (1,0) [0|3.0] "" Vector__XXX
+ SG_ LidarRight_state : 14|2@1+ (1,0) [0|3.0] "" Vector__XXX
+ SG_ LidarUp_state : 16|2@1+ (1,0) [0|3.0] "" Vector__XXX
+ SG_ LidarRear_state : 18|2@1+ (1,0) [0|3.0] "" Vector__XXX
+ SG_ LidarFront2_state : 20|2@1+ (1,0) [0|3.0] "" Vector__XXX
+ SG_ LidarFront1_state : 22|2@1+ (1,0) [0|3.0] "" Vector__XXX
+BO_ 2684291075 ADU_BcoreDiag: 8 ADU
+ SG_ navi_pathRec_err : 0|1@1+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ navi_work_err : 1|1@1+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ navi_pathFinish_err : 2|1@1+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ navi_mass_err : 3|1@1+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ endpoint_diag : 4|1@1+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ navi_tboxonline : 5|1@1+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ navi_tboxbusoff : 6|1@1+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ navirepeatPoint : 7|1@1+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ naviMap_State : 8|1@1+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ ContainerDis_diag : 14|1@1+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ brgstop_diag : 15|1@1+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ naviEnable_err : 18|1@1+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ naviInit_diagnosis : 19|1@1+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ navi_GymGnt_Flag : 20|4@1+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ LctVeh_st_err : 24|3@1+ (1,0) [0|7.0] "" Vector__XXX
+ SG_ LctGPS_st_err : 27|3@1+ (1,0) [0|7.0] "" Vector__XXX
+ SG_ LctCAM_st_err : 30|3@1+ (1,0) [0|7.0] "" Vector__XXX
+ SG_ LctLidar_st_err : 33|3@1+ (1,0) [0|7.0] "" Vector__XXX
+ SG_ LocationFusion_err : 36|4@1+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ ADU_Drive_err : 41|1@1+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ ADU_Steer_err : 42|2@1+ (1,0) [0|3.0] "" Vector__XXX
+ SG_ ADU_Brake_Diag : 44|4@1+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ TargetVx0 : 48|4@1+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ ADU_OFF_Diag : 52|4@1+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ outRoadEdge : 62|1@1+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ outpath : 63|1@1+ (1,0) [0|1.0] "" Vector__XXX
+BO_ 1024 Object_header: 8 LidarObjs
+ SG_ num_of_objs : 0|8@1+ (1,0) [0|255.0] "" Vector__XXX
+ SG_ counter : 8|4@1+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ constant1 : 12|1@1+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ year : 16|11@1+ (1,0) [0|2047.0] "" Vector__XXX
+ SG_ month : 32|4@1+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ day : 40|5@1+ (1,0) [0|31.0] "" Vector__XXX
+BO_ 1280 Object_0_part0: 8 LidarObjs
+ SG_ ObjLatDis_0 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_0 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_0 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_0 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1281 Object_0_part1: 8 LidarObjs
+ SG_ ObjID_0 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_0 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_0 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_0 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_0 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1282 Object_1_part0: 8 LidarObjs
+ SG_ ObjLatDis_1 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_1 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_1 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_1 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1283 Object_1_part1: 8 LidarObjs
+ SG_ ObjID_1 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_1 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_1 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_1 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_1 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1284 Object_2_part0: 8 LidarObjs
+ SG_ ObjLatDis_2 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_2 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_2 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_2 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1285 Object_2_part1: 8 LidarObjs
+ SG_ ObjID_2 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_2 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_2 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_2 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_2 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1286 Object_3_part0: 8 LidarObjs
+ SG_ ObjLatDis_3 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_3 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_3 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_3 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1287 Object_3_part1: 8 LidarObjs
+ SG_ ObjID_3 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_3 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_3 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_3 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_3 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1288 Object_4_part0: 8 LidarObjs
+ SG_ ObjLatDis_4 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_4 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_4 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_4 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1289 Object_4_part1: 8 LidarObjs
+ SG_ ObjID_4 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_4 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_4 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_4 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_4 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1290 Object_5_part0: 8 LidarObjs
+ SG_ ObjLatDis_5 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_5 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_5 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_5 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1291 Object_5_part1: 8 LidarObjs
+ SG_ ObjID_5 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_5 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_5 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_5 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_5 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1292 Object_6_part0: 8 LidarObjs
+ SG_ ObjLatDis_6 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_6 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_6 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_6 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1293 Object_6_part1: 8 LidarObjs
+ SG_ ObjID_6 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_6 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_6 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_6 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_6 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1294 Object_7_part0: 8 LidarObjs
+ SG_ ObjLatDis_7 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_7 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_7 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_7 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1295 Object_7_part1: 8 LidarObjs
+ SG_ ObjID_7 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_7 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_7 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_7 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_7 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1296 Object_8_part0: 8 LidarObjs
+ SG_ ObjLatDis_8 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_8 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_8 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_8 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1297 Object_8_part1: 8 LidarObjs
+ SG_ ObjID_8 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_8 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_8 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_8 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_8 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1298 Object_9_part0: 8 LidarObjs
+ SG_ ObjLatDis_9 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_9 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_9 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_9 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1299 Object_9_part1: 8 LidarObjs
+ SG_ ObjID_9 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_9 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_9 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_9 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_9 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1300 Object_10_part0: 8 LidarObjs
+ SG_ ObjLatDis_10 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_10 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_10 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_10 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1301 Object_10_part1: 8 LidarObjs
+ SG_ ObjID_10 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_10 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_10 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_10 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_10 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1302 Object_11_part0: 8 LidarObjs
+ SG_ ObjLatDis_11 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_11 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_11 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_11 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1303 Object_11_part1: 8 LidarObjs
+ SG_ ObjID_11 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_11 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_11 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_11 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_11 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1304 Object_12_part0: 8 LidarObjs
+ SG_ ObjLatDis_12 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_12 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_12 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_12 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1305 Object_12_part1: 8 LidarObjs
+ SG_ ObjID_12 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_12 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_12 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_12 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_12 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1306 Object_13_part0: 8 LidarObjs
+ SG_ ObjLatDis_13 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_13 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_13 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_13 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1307 Object_13_part1: 8 LidarObjs
+ SG_ ObjID_13 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_13 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_13 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_13 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_13 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1308 Object_14_part0: 8 LidarObjs
+ SG_ ObjLatDis_14 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_14 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_14 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_14 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1309 Object_14_part1: 8 LidarObjs
+ SG_ ObjID_14 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_14 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_14 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_14 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_14 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1310 Object_15_part0: 8 LidarObjs
+ SG_ ObjLatDis_15 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_15 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_15 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_15 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1311 Object_15_part1: 8 LidarObjs
+ SG_ ObjID_15 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_15 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_15 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_15 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_15 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1312 Object_16_part0: 8 LidarObjs
+ SG_ ObjLatDis_16 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_16 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_16 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_16 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1313 Object_16_part1: 8 LidarObjs
+ SG_ ObjID_16 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_16 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_16 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_16 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_16 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1314 Object_17_part0: 8 LidarObjs
+ SG_ ObjLatDis_17 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_17 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_17 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_17 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1315 Object_17_part1: 8 LidarObjs
+ SG_ ObjID_17 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_17 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_17 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_17 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_17 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1316 Object_18_part0: 8 LidarObjs
+ SG_ ObjLatDis_18 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_18 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_18 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_18 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1317 Object_18_part1: 8 LidarObjs
+ SG_ ObjID_18 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_18 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_18 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_18 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_18 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1318 Object_19_part0: 8 LidarObjs
+ SG_ ObjLatDis_19 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_19 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_19 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_19 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1319 Object_19_part1: 8 LidarObjs
+ SG_ ObjID_19 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_19 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_19 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_19 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_19 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1320 Object_20_part0: 8 LidarObjs
+ SG_ ObjLatDis_20 : 0|13@1+ (0.01,-40) [-40|41.91] "m" Vector__XXX
+ SG_ ObjLongDis_20 : 13|15@1+ (0.01,-100) [-100|227.67000000000002] "m" Vector__XXX
+ SG_ ObjLatSpd_20 : 28|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+ SG_ ObjLongSpd_20 : 42|14@1+ (0.01,-81) [-81|82.83000000000001] "mps" Vector__XXX
+BO_ 1321 Object_20_part1: 8 LidarObjs
+ SG_ ObjID_20 : 0|6@1+ (1,0) [0|63.0] "" Vector__XXX
+ SG_ ObjLength_20 : 6|12@1+ (0.01,0) [0|40.95] "m" Vector__XXX
+ SG_ ObjWidth_20 : 18|10@1+ (0.01,0) [0|10.23] "m" Vector__XXX
+ SG_ ObjHeadAngle_20 : 28|11@1+ (0.1,-100) [-100|104.70000000000002] "deg" Vector__XXX
+ SG_ Objtype_20 : 39|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 2017 Lidar_BrgStop: 4 LidarOthers
+ SG_ BrgStop_b : 7|16@0- (0.002,0) [-65.536|65.534] "m" Vector__XXX
+ SG_ BrgStop_ID : 23|10@0+ (1,0) [0|1023.0] "" Vector__XXX
+ SG_ Brgstop_counter : 27|4@0+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ BrgStop_flag : 29|2@0+ (1,0) [0|3.0] "" Vector__XXX
+BO_ 2018 Lidar_ContainerDis: 8 LidarOthers
+ SG_ Container_dis1 : 7|16@0- (0.001,0) [-32.768|32.767] "m" Vector__XXX
+ SG_ Container_dis2 : 23|16@0- (0.001,0) [-32.768|32.767] "m" Vector__XXX
+ SG_ dis2_flag : 38|1@0+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ dis1_flag : 39|1@0+ (1,0) [0|1.0] "" Vector__XXX
+BO_ 2019 Lidar_trailerAng: 8 LidarOthers
+ SG_ trailer_k : 7|30@0- (0.001,0) [-536870.912|536870.911] "deg" Vector__XXX
+ SG_ trailer_flag : 24|1@0+ (1,0) [0|1.0] "" Vector__XXX
+ SG_ Trailer_counter : 59|4@0+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 2022 Lidar_RoadLLine: 8 LidarOthers
+ SG_ LLine_posx : 7|16@0- (0.01,0) [-327.68|327.67] "m" Vector__XXX
+ SG_ LLine_posy : 23|16@0- (0.01,0) [-327.68|327.67] "m" Vector__XXX
+ SG_ LLine_HA : 39|16@0- (0.01,0) [-327.68|327.67] "deg" Vector__XXX
+ SG_ LLine_counter : 59|4@0+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ LLine_type : 63|4@0+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 2023 Lidar_RoadRLine: 8 LidarOthers
+ SG_ RLine_posx : 7|16@0- (0.01,0) [-327.68|327.67] "m" Vector__XXX
+ SG_ RLine_posy : 23|16@0- (0.01,0) [-327.68|327.67] "m" Vector__XXX
+ SG_ RLine_HA : 39|16@0- (0.01,0) [-327.68|327.67] "deg" Vector__XXX
+ SG_ RLine_counter : 59|4@0+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ RLine_type : 63|4@0+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 2024 Lidar_RoadPoint: 8 LidarOthers
+ SG_ polePoint_posx : 7|16@0- (0.01,0) [-327.68|327.67] "m" Vector__XXX
+ SG_ polePoint_posy : 23|16@0- (0.01,0) [-327.68|327.67] "m" Vector__XXX
+ SG_ polePoint_HA : 39|16@0- (0.01,0) [-327.68|327.67] "deg" Vector__XXX
+ SG_ polePoint_counter : 59|4@0+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ polePoint_type : 63|4@0+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 2027 ADUtoLidar: 8 ADU
+ SG_ BrgStop_Dis : 0|12@1- (0.05,0) [-102.4|102.35000000000001] "m" Vector__XXX
+ SG_ carVx : 16|11@1+ (0.1,-102.3) [-102.3|102.40000000000002] "kmph" Vector__XXX
+ SG_ carStrAng : 27|15@1+ (0.1,-1638.4) [-1638.4|1638.3000000000002] "deg" Vector__XXX
+ SG_ car_yawrate : 42|13@1+ (0.05,-204.2) [-204.2|205.35000000000002] "degps" Vector__XXX
+ SG_ ADU_counter : 56|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1792 Lidar_state: 8 LidarFS
+ SG_ LidarLeft_state : 0|4@1+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ LidarRight_state : 4|4@1+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ LidarUp_state : 8|4@1+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ LidarRear_state : 12|4@1+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ LidarFront2_state : 16|4@1+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ LidarFront1_state : 20|4@1+ (1,0) [0|15.0] "" Vector__XXX
+ SG_ VersionNum : 40|16@1+ (1,0) [0|65535.0] "" Vector__XXX
+ SG_ Counter_700 : 56|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1793 FRPoint1: 8 LidarFS
+ SG_ FRDistance1 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance2 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance3 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance4 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance5 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance6 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_701 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1794 FRPoint2: 8 LidarFS
+ SG_ FRDistance7 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance8 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance9 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance10 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance11 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance12 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_702 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1795 FRPoint3: 8 LidarFS
+ SG_ FRDistance13 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance14 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance15 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance16 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance17 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance18 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_703 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1796 FRPoint4: 8 LidarFS
+ SG_ FRDistance19 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance20 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance21 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance22 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance23 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance24 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_704 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1797 FRPoint5: 8 LidarFS
+ SG_ FRDistance25 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance26 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance27 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance28 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance29 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance30 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_705 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1798 FRPoint6: 8 LidarFS
+ SG_ FRDistance31 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance32 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance33 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance34 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance35 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance36 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_706 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1799 FRPoint7: 8 LidarFS
+ SG_ FRDistance37 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance38 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance39 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance40 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance41 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance42 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_707 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1800 FRPoint8: 8 LidarFS
+ SG_ FRDistance43 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance44 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance45 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance46 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance47 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance48 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_708 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1801 FRPoint9: 8 LidarFS
+ SG_ FRDistance49 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance50 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance51 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance52 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance53 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance54 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_709 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1802 FRPoint10: 8 LidarFS
+ SG_ FRDistance55 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance56 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance57 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance58 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance59 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance60 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_70A : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1803 FRPoint11: 8 LidarFS
+ SG_ FRDistance61 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance62 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance63 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance64 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance65 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance66 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_70B : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1804 FRPoint12: 8 LidarFS
+ SG_ FRDistance67 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance68 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance69 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance70 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance71 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance72 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_70C : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1805 FRPoint13: 8 LidarFS
+ SG_ FRDistance73 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance74 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance75 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance76 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance77 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance78 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_70D : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1806 FRPoint14: 8 LidarFS
+ SG_ FRDistance79 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance80 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance81 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance82 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance83 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance84 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_70E : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1807 FRPoint15: 8 LidarFS
+ SG_ FRDistance85 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance86 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance87 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance88 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance89 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance90 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_70F : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1808 FRPoint16: 8 LidarFS
+ SG_ FRDistance91 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance92 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance93 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance94 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance95 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance96 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_710 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1809 FRPoint17: 8 LidarFS
+ SG_ FRDistance97 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance98 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance99 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance100 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance101 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance102 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_711 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1810 FRPoint18: 8 LidarFS
+ SG_ FRDistance103 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance104 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance105 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance106 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance107 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance108 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_712 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1811 FRPoint19: 8 LidarFS
+ SG_ FRDistance109 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance110 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance111 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance112 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance113 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance114 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_713 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1812 FRPoint20: 8 LidarFS
+ SG_ FRDistance115 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance116 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance117 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance118 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance119 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance120 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_714 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1813 FRPoint21: 8 LidarFS
+ SG_ FRDistance121 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance122 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance123 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance124 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance125 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance126 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_715 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1814 FRPoint22: 8 LidarFS
+ SG_ FRDistance127 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance128 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance129 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance130 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance131 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance132 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_716 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1815 FRPoint23: 8 LidarFS
+ SG_ FRDistance133 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance134 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance135 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance136 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance137 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance138 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_717 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1816 FRPoint24: 8 LidarFS
+ SG_ FRDistance139 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance140 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance141 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance142 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance143 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance144 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_718 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1817 FRPoint25: 8 LidarFS
+ SG_ FRDistance145 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance146 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance147 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance148 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance149 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance150 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_719 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1818 FRPoint26: 8 LidarFS
+ SG_ FRDistance151 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance152 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance153 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance154 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance155 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance156 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_71A : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1819 FRPoint27: 8 LidarFS
+ SG_ FRDistance157 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance158 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance159 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance160 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance161 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance162 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_71B : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1820 FRPoint28: 8 LidarFS
+ SG_ FRDistance163 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance164 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance165 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance166 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance167 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance168 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_71C : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1821 FRPoint29: 8 LidarFS
+ SG_ FRDistance169 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance170 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance171 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance172 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance173 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance174 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_71D : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1822 FRPoint30: 8 LidarFS
+ SG_ FRDistance175 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance176 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance177 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance178 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance179 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance180 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_71E : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1823 FRPoint31: 8 LidarFS
+ SG_ FRDistance181 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance182 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance183 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance184 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance185 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance186 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_71F : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1824 FRPoint32: 8 LidarFS
+ SG_ FRDistance187 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance188 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance189 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance190 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance191 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance192 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_720 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1825 FRPoint33: 8 LidarFS
+ SG_ FRDistance193 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance194 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance195 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance196 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance197 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance198 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_721 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1826 FRPoint34: 8 LidarFS
+ SG_ FRDistance199 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance200 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance201 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance202 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance203 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance204 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_722 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1827 FRPoint35: 8 LidarFS
+ SG_ FRDistance205 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance206 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance207 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance208 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance209 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance210 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_723 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1828 FRPoint36: 8 LidarFS
+ SG_ FRDistance211 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance212 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance213 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance214 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance215 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance216 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_724 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1829 FRPoint37: 8 LidarFS
+ SG_ FRDistance217 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance218 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance219 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance220 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance221 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance222 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_725 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1830 FRPoint38: 8 LidarFS
+ SG_ FRDistance223 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance224 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance225 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance226 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance227 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance228 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_726 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1831 FRPoint39: 8 LidarFS
+ SG_ FRDistance229 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance230 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance231 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance232 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance233 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance234 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_727 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1832 FRPoint40: 8 LidarFS
+ SG_ FRDistance235 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance236 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance237 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance238 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance239 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance240 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_728 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1833 FRPoint41: 8 LidarFS
+ SG_ FRDistance241 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance242 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance243 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance244 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance245 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance246 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_729 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1834 FRPoint42: 8 LidarFS
+ SG_ FRDistance247 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance248 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance249 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance250 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance251 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance252 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_72A : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1835 FRPoint43: 8 LidarFS
+ SG_ FRDistance253 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance254 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance255 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance256 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance257 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance258 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_72B : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1836 FRPoint44: 8 LidarFS
+ SG_ FRDistance259 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance260 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance261 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance262 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance263 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance264 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_72C : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1837 FRPoint45: 8 LidarFS
+ SG_ FRDistance265 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance266 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance267 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance268 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance269 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance270 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_72D : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1838 FRPoint46: 8 LidarFS
+ SG_ FRDistance271 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance272 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance273 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance274 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance275 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance276 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_72E : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1839 FRPoint47: 8 LidarFS
+ SG_ FRDistance277 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance278 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance279 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance280 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance281 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance282 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_72F : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1840 FRPoint48: 8 LidarFS
+ SG_ FRDistance283 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance284 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance285 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance286 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance287 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance288 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_730 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1841 FRPoint49: 8 LidarFS
+ SG_ FRDistance289 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance290 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance291 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance292 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance293 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance294 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_731 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1842 FRPoint50: 8 LidarFS
+ SG_ FRDistance295 : 0|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance296 : 10|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance297 : 20|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance298 : 30|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance299 : 40|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ FRDistance300 : 50|10@1+ (0.05,0) [0|51.150000000000006] "m" Vector__XXX
+ SG_ Counter_732 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1843 FRPoint51: 8 LidarFS
+ SG_ FRDistance301 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance302 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance303 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance304 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance305 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance306 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_733 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1844 FRPoint52: 8 LidarFS
+ SG_ FRDistance307 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance308 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance309 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance310 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance311 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance312 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_734 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1845 FRPoint53: 8 LidarFS
+ SG_ FRDistance313 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance314 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance315 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance316 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance317 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance318 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_735 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1846 FRPoint54: 8 LidarFS
+ SG_ FRDistance319 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance320 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance321 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance322 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance323 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance324 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_736 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1847 FRPoint55: 8 LidarFS
+ SG_ FRDistance325 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance326 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance327 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance328 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance329 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance330 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_737 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1848 FRPoint56: 8 LidarFS
+ SG_ FRDistance331 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance332 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance333 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance334 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance335 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance336 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_738 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1849 FRPoint57: 8 LidarFS
+ SG_ FRDistance337 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance338 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance339 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance340 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance341 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance342 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_739 : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1850 FRPoint58: 8 LidarFS
+ SG_ FRDistance343 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance344 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance345 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance346 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance347 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance348 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_73A : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1851 FRPoint59: 8 LidarFS
+ SG_ FRDistance349 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance350 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance351 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance352 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance353 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance354 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_73B : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1852 FRPoint60: 8 LidarFS
+ SG_ FRDistance355 : 0|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance356 : 10|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance357 : 20|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance358 : 30|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance359 : 40|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ FRDistance360 : 50|10@1+ (0.1,0) [0|102.30000000000001] "m" Vector__XXX
+ SG_ Counter_73C : 60|4@1+ (1,0) [0|15.0] "" Vector__XXX
+BO_ 1537 INS_Gyro: 8 GPS_INS
+ SG_ INS_GYRO_X : 7|16@0+ (0.0076293,-250) [-250|249.9861755] "degps" Vector__XXX
+ SG_ INS_GYRO_Y : 23|16@0+ (0.0076293,-250) [-250|249.9861755] "degps" Vector__XXX
+ SG_ INS_GYRO_Z : 39|16@0+ (0.0076293,-250) [-250|249.9861755] "degps" Vector__XXX
+BO_ 1539 INS_HeightAndTime: 8 GPS_INS
+ SG_ INS_LocatHeight : 7|32@0+ (0.001,-10000) [-10000|4284967.295] "m" Vector__XXX
+ SG_ INS_Time : 39|32@0+ (1,0) [0|4294967295.0] "ms" Vector__XXX
+BO_ 1540 INS_LatitudeLongitude: 8 GPS_INS
+ SG_ INS_Latitude : 7|32@0+ (0.0000001,-180) [-180|249.49672949999996] "deg" Vector__XXX
+ SG_ INS_Longitude : 39|32@0+ (0.0000001,-180) [-180|249.49672949999996] "deg" Vector__XXX
+BO_ 1541 INS_Speed: 8 GPS_INS
+ SG_ INS_EastSpd : 7|16@0+ (0.0030517,-100) [-100|99.99315950000002] "mps" Vector__XXX
+ SG_ INS_NorthSpd : 23|16@0+ (0.0030517,-100) [-100|99.99315950000002] "mps" Vector__XXX
+ SG_ INS_ToGroundSpd : 39|16@0+ (0.0030517,-100) [-100|99.99315950000002] "mps" Vector__XXX
+BO_ 1542 INS_DataInfo: 8 GPS_INS
+ SG_ GPS_flag_pos : 7|8@0+ (1,0) [0|255.0] "" Vector__XXX
+ SG_ GPS_gps_numsv : 15|8@0+ (1,0) [0|255.0] "" Vector__XXX
+ SG_ GPS_flag_heading : 23|8@0+ (1,0) [0|255.0] "" Vector__XXX
+ SG_ GPS_age : 31|8@0+ (1,0) [0|255.0] "" Vector__XXX
+ SG_ car_statue : 39|8@0+ (1,0) [0|255.0] "" Vector__XXX
+ SG_ INS_statue : 63|8@0+ (1,0) [0|255.0] "" Vector__XXX
+BO_ 1543 INS_Std: 8 GPS_INS
+ SG_ INS_Std_Lat : 7|16@0+ (0.001,0) [0|65.535] "" Vector__XXX
+ SG_ INS_Std_Lon : 23|16@0+ (0.001,0) [0|65.535] "" Vector__XXX
+ SG_ INS_Std_Height : 39|16@0+ (0.001,0) [0|65.535] "" Vector__XXX
+BO_ 1544 INS_Acc: 8 GPS_INS
+ SG_ INS_A_Z : 7|16@0+ (0.0001220703125,-4) [-4|3.9998779296875] "g" Vector__XXX
+ SG_ INS_A_Y : 23|16@0+ (0.0001220703125,-4) [-4|3.9998779296875] "g" Vector__XXX
+ SG_ INS_A_X : 39|16@0+ (0.0001220703125,-4) [-4|3.9998779296875] "g" Vector__XXX
+BO_ 1545 INS_HeadingPitchRoll: 8 GPS_INS
+ SG_ INS_PitchAngle : 7|16@0+ (0.010986,-360) [-360|359.96750999999995] "deg" Vector__XXX
+ SG_ INS_RollAngle : 23|16@0+ (0.010986,-360) [-360|359.96750999999995] "deg" Vector__XXX
+ SG_ INS_HeadingAngle : 39|16@0+ (0.010986,-360) [-360|359.96750999999995] "deg" Vector__XXX
+BO_ 1546 GPS_LatitudeLongitude: 8 GPS_INS
+ SG_ GPS_Latitude : 7|32@0+ (0.0000001,-180) [-180|249.49672949999996] "deg" Vector__XXX
+ SG_ GPS_Longtitude : 39|32@0+ (0.0000001,-90) [-90|339.49672949999996] "deg" Vector__XXX
+BO_ 1547 GPS_HeightAndTime: 8 GPS_INS
+ SG_ GPS_LocatHeight : 7|32@0+ (0.001,-10000) [-10000|4284967.295] "m" Vector__XXX
+ SG_ GPS_Time : 39|32@0+ (1,0) [0|4294967295.0] "ms" Vector__XXX
+BO_ 1548 GPS_DOP: 8 GPS_INS
+ SG_ GPS_GDOP : 7|16@0+ (0.001,0) [0|65.535] "" Vector__XXX
+ SG_ GPS_PDOP : 23|16@0+ (0.001,0) [0|65.535] "" Vector__XXX
+ SG_ GPS_HDOP : 39|16@0+ (0.001,0) [0|65.535] "" Vector__XXX
+ SG_ GPS_VDOP : 55|16@0+ (0.001,0) [0|65.535] "" Vector__XXX
+BO_ 1549 GPS_WeekAndSec: 8 GPS_INS
+ SG_ GPS_week : 7|16@0+ (1,0) [0|65535.0] "week" Vector__XXX
+ SG_ GPS_sec : 23|32@0+ (1,0) [0|4294967295.0] "s" Vector__XXX
+BO_ 1550 GPS_HeadingAngle: 8 GPS_INS
+ SG_ GPS_HeadingAngle : 7|32@0+ (0.0000001,-180) [-180|249.49672949999996] "deg" Vector__XXX
+BO_ 2565866791 ADU_ETC2: 4 ADU
+ SG_ CurrentGear : 24|8@1+ (1,-125) [-125|130.0] "" Vector__XXX
+BO_ 2566831883 ADU_EBC2: 8 ADU
+ SG_ FrontAxleSpeed : 0|16@1+ (0.00390625,0) [0|255.99609375] "kmph" Vector__XXX
+ SG_ RelativeSpeedFrontAxleLeftWheel : 16|8@1+ (0.0625,-7.8125) [-7.8125|8.125] "kmph" Vector__XXX
+ SG_ RlativeSpeedFrontAxleRightWheel : 24|8@1+ (0.0625,-7.8125) [-7.8125|8.125] "kmph" Vector__XXX
+ SG_ RelativeSpeedRearAxle1LeftWheel : 32|8@1+ (0.0625,-7.8125) [-7.8125|8.125] "kmph" Vector__XXX
+ SG_ RlativeSpeedRearAxle1RightWheel : 40|8@1+ (0.0625,-7.8125) [-7.8125|8.125] "kmph" Vector__XXX
+ SG_ RelativeSpeedRearAxle2LeftWheel : 48|8@1+ (0.0625,-7.8125) [-7.8125|8.125] "kmph" Vector__XXX
+ SG_ RlativeSpeedRearAxle2RightWheel : 56|8@1+ (0.0625,-7.8125) [-7.8125|8.125] "kmph" Vector__XXX
+CM_ BO_ 2163251494 "同步报文";
+CM_ BO_ 773 "纵向转发报文";
+CM_ BO_ 2003 "B核耗时";
+CM_ BO_ 2005 "A核耗时";
+CM_ BO_ 2007 "A核激活状态";
+CM_ BO_ 2047 "版本号";
+CM_ BO_ 771 "融合定位输出";
+CM_ BO_ 2684291074 "A核诊断报文";
+CM_ BO_ 2684291075 "B核诊断报文";
+CM_ BO_ 1024 "激光聚类报文头";
+CM_ BO_ 1280 "";
+CM_ BO_ 1281 "";
+CM_ BO_ 1282 "";
+CM_ BO_ 1283 "";
+CM_ BO_ 1284 "";
+CM_ BO_ 1285 "";
+CM_ BO_ 1286 "";
+CM_ BO_ 1287 "";
+CM_ BO_ 1288 "";
+CM_ BO_ 1289 "";
+CM_ BO_ 1290 "";
+CM_ BO_ 1291 "";
+CM_ BO_ 1292 "";
+CM_ BO_ 1293 "";
+CM_ BO_ 1294 "";
+CM_ BO_ 1295 "";
+CM_ BO_ 1296 "";
+CM_ BO_ 1297 "";
+CM_ BO_ 1298 "";
+CM_ BO_ 1299 "";
+CM_ BO_ 1300 "";
+CM_ BO_ 1301 "";
+CM_ BO_ 1302 "";
+CM_ BO_ 1303 "";
+CM_ BO_ 1304 "";
+CM_ BO_ 1305 "";
+CM_ BO_ 1306 "";
+CM_ BO_ 1307 "";
+CM_ BO_ 1308 "";
+CM_ BO_ 1309 "";
+CM_ BO_ 1310 "";
+CM_ BO_ 1311 "";
+CM_ BO_ 1312 "";
+CM_ BO_ 1313 "";
+CM_ BO_ 1314 "";
+CM_ BO_ 1315 "";
+CM_ BO_ 1316 "";
+CM_ BO_ 1317 "";
+CM_ BO_ 1318 "";
+CM_ BO_ 1319 "";
+CM_ BO_ 1320 "";
+CM_ BO_ 1321 "";
+CM_ BO_ 2017 "";
+CM_ BO_ 2018 "";
+CM_ BO_ 2019 "";
+CM_ BO_ 2022 "左侧道路边界";
+CM_ BO_ 2023 "右侧道路边界";
+CM_ BO_ 2024 "道路纵向修正点";
+CM_ BO_ 2027 "车身信息";
+CM_ BO_ 1792 "激光状态S32V自诊断";
+CM_ BO_ 1793 "极坐标，逆时针递增";
+CM_ BO_ 1794 "极坐标，逆时针递增";
+CM_ BO_ 1795 "极坐标，逆时针递增";
+CM_ BO_ 1796 "极坐标，逆时针递增";
+CM_ BO_ 1797 "极坐标，逆时针递增";
+CM_ BO_ 1798 "极坐标，逆时针递增";
+CM_ BO_ 1799 "极坐标，逆时针递增";
+CM_ BO_ 1800 "极坐标，逆时针递增";
+CM_ BO_ 1801 "极坐标，逆时针递增";
+CM_ BO_ 1802 "极坐标，逆时针递增";
+CM_ BO_ 1803 "极坐标，逆时针递增";
+CM_ BO_ 1804 "极坐标，逆时针递增";
+CM_ BO_ 1805 "极坐标，逆时针递增";
+CM_ BO_ 1806 "极坐标，逆时针递增";
+CM_ BO_ 1807 "极坐标，逆时针递增";
+CM_ BO_ 1808 "极坐标，逆时针递增";
+CM_ BO_ 1809 "极坐标，逆时针递增";
+CM_ BO_ 1810 "极坐标，逆时针递增";
+CM_ BO_ 1811 "极坐标，逆时针递增";
+CM_ BO_ 1812 "极坐标，逆时针递增";
+CM_ BO_ 1813 "极坐标，逆时针递增";
+CM_ BO_ 1814 "极坐标，逆时针递增";
+CM_ BO_ 1815 "极坐标，逆时针递增";
+CM_ BO_ 1816 "极坐标，逆时针递增";
+CM_ BO_ 1817 "极坐标，逆时针递增";
+CM_ BO_ 1818 "极坐标，逆时针递增";
+CM_ BO_ 1819 "极坐标，逆时针递增";
+CM_ BO_ 1820 "极坐标，逆时针递增";
+CM_ BO_ 1821 "极坐标，逆时针递增";
+CM_ BO_ 1822 "极坐标，逆时针递增";
+CM_ BO_ 1823 "极坐标，逆时针递增";
+CM_ BO_ 1824 "极坐标，逆时针递增";
+CM_ BO_ 1825 "极坐标，逆时针递增";
+CM_ BO_ 1826 "极坐标，逆时针递增";
+CM_ BO_ 1827 "极坐标，逆时针递增";
+CM_ BO_ 1828 "极坐标，逆时针递增";
+CM_ BO_ 1829 "极坐标，逆时针递增";
+CM_ BO_ 1830 "极坐标，逆时针递增";
+CM_ BO_ 1831 "极坐标，逆时针递增";
+CM_ BO_ 1832 "极坐标，逆时针递增";
+CM_ BO_ 1833 "极坐标，逆时针递增";
+CM_ BO_ 1834 "极坐标，逆时针递增";
+CM_ BO_ 1835 "极坐标，逆时针递增";
+CM_ BO_ 1836 "极坐标，逆时针递增";
+CM_ BO_ 1837 "极坐标，逆时针递增";
+CM_ BO_ 1838 "极坐标，逆时针递增";
+CM_ BO_ 1839 "极坐标，逆时针递增";
+CM_ BO_ 1840 "极坐标，逆时针递增";
+CM_ BO_ 1841 "极坐标，逆时针递增";
+CM_ BO_ 1842 "极坐标，逆时针递增";
+CM_ BO_ 1843 "极坐标，逆时针递增";
+CM_ BO_ 1844 "极坐标，逆时针递增";
+CM_ BO_ 1845 "极坐标，逆时针递增";
+CM_ BO_ 1846 "极坐标，逆时针递增";
+CM_ BO_ 1847 "极坐标，逆时针递增";
+CM_ BO_ 1848 "极坐标，逆时针递增";
+CM_ BO_ 1849 "极坐标，逆时针递增";
+CM_ BO_ 1850 "极坐标，逆时针递增";
+CM_ BO_ 1851 "极坐标，逆时针递增";
+CM_ BO_ 1852 "极坐标，逆时针递增";
+CM_ BO_ 1537 "";
+CM_ BO_ 1539 "";
+CM_ BO_ 1540 "IMU融合经纬度";
+CM_ BO_ 1541 "";
+CM_ BO_ 1542 "GPS_INS状态";
+CM_ BO_ 1543 "";
+CM_ BO_ 1544 "IMU加速度，单位是g";
+CM_ BO_ 1545 "";
+CM_ BO_ 1546 "原始GPS差分经纬度";
+CM_ BO_ 1547 "";
+CM_ BO_ 1548 "";
+CM_ BO_ 1549 "";
+CM_ BO_ 1550 "";
+CM_ BO_ 2565866791 "车身档位信息";
+CM_ BO_ 2566831883 "车身轮速信息";
+CM_ SG_ 2163251494 adu_SyncMsgcounter"每1s加1,0~15循环";
+CM_ SG_ 771 carx"正东为x";
+CM_ SG_ 771 cary"正北为y";
+CM_ SG_ 771 caryaw"逆时针为正，0~360deg";
+CM_ SG_ 2684291074 CAM_DiagFlag"eyeQ状态诊断";
+CM_ SG_ 2684291074 ESR_DiagFlag"ESR状态诊断";
+CM_ SG_ 2684291074 LiDARfs_DiagFlag"激光状态诊断";
+CM_ SG_ 2684291074 LiDARobject_DiagFlag"激光状态诊断";
+CM_ SG_ 1024 num_of_objs"聚类当前帧识别的总物体数";
+CM_ SG_ 1024 counter"每周期+1,0-15循环";
+CM_ SG_ 1280 ObjLatDis_0"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1280 ObjLongDis_0"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1280 ObjLatSpd_0"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1280 ObjLongSpd_0"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1281 ObjLength_0"长，纵向x，横向y，左负右正";
+CM_ SG_ 1281 ObjWidth_0"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1281 ObjHeadAngle_0"朝向，顺时针为正";
+CM_ SG_ 1281 Objtype_0"类别";
+CM_ SG_ 1282 ObjLatDis_1"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1282 ObjLongDis_1"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1282 ObjLatSpd_1"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1282 ObjLongSpd_1"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1283 ObjLength_1"长，纵向x，横向y，左负右正";
+CM_ SG_ 1283 ObjWidth_1"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1283 ObjHeadAngle_1"朝向，顺时针为正";
+CM_ SG_ 1283 Objtype_1"类别";
+CM_ SG_ 1284 ObjLatDis_2"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1284 ObjLongDis_2"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1284 ObjLatSpd_2"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1284 ObjLongSpd_2"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1285 ObjLength_2"长，纵向x，横向y，左负右正";
+CM_ SG_ 1285 ObjWidth_2"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1285 ObjHeadAngle_2"朝向，顺时针为正";
+CM_ SG_ 1285 Objtype_2"类别";
+CM_ SG_ 1286 ObjLatDis_3"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1286 ObjLongDis_3"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1286 ObjLatSpd_3"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1286 ObjLongSpd_3"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1287 ObjLength_3"长，纵向x，横向y，左负右正";
+CM_ SG_ 1287 ObjWidth_3"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1287 ObjHeadAngle_3"朝向，顺时针为正";
+CM_ SG_ 1287 Objtype_3"类别";
+CM_ SG_ 1288 ObjLatDis_4"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1288 ObjLongDis_4"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1288 ObjLatSpd_4"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1288 ObjLongSpd_4"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1289 ObjLength_4"长，纵向x，横向y，左负右正";
+CM_ SG_ 1289 ObjWidth_4"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1289 ObjHeadAngle_4"朝向，顺时针为正";
+CM_ SG_ 1289 Objtype_4"类别";
+CM_ SG_ 1290 ObjLatDis_5"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1290 ObjLongDis_5"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1290 ObjLatSpd_5"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1290 ObjLongSpd_5"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1291 ObjLength_5"长，纵向x，横向y，左负右正";
+CM_ SG_ 1291 ObjWidth_5"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1291 ObjHeadAngle_5"朝向，顺时针为正";
+CM_ SG_ 1291 Objtype_5"类别";
+CM_ SG_ 1292 ObjLatDis_6"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1292 ObjLongDis_6"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1292 ObjLatSpd_6"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1292 ObjLongSpd_6"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1293 ObjLength_6"长，纵向x，横向y，左负右正";
+CM_ SG_ 1293 ObjWidth_6"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1293 ObjHeadAngle_6"朝向，顺时针为正";
+CM_ SG_ 1293 Objtype_6"类别";
+CM_ SG_ 1294 ObjLatDis_7"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1294 ObjLongDis_7"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1294 ObjLatSpd_7"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1294 ObjLongSpd_7"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1295 ObjLength_7"长，纵向x，横向y，左负右正";
+CM_ SG_ 1295 ObjWidth_7"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1295 ObjHeadAngle_7"朝向，顺时针为正";
+CM_ SG_ 1295 Objtype_7"类别";
+CM_ SG_ 1296 ObjLatDis_8"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1296 ObjLongDis_8"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1296 ObjLatSpd_8"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1296 ObjLongSpd_8"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1297 ObjLength_8"长，纵向x，横向y，左负右正";
+CM_ SG_ 1297 ObjWidth_8"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1297 ObjHeadAngle_8"朝向，顺时针为正";
+CM_ SG_ 1297 Objtype_8"类别";
+CM_ SG_ 1298 ObjLatDis_9"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1298 ObjLongDis_9"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1298 ObjLatSpd_9"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1298 ObjLongSpd_9"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1299 ObjLength_9"长，纵向x，横向y，左负右正";
+CM_ SG_ 1299 ObjWidth_9"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1299 ObjHeadAngle_9"朝向，顺时针为正";
+CM_ SG_ 1299 Objtype_9"类别";
+CM_ SG_ 1300 ObjLatDis_10"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1300 ObjLongDis_10"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1300 ObjLatSpd_10"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1300 ObjLongSpd_10"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1301 ObjLength_10"长，纵向x，横向y，左负右正";
+CM_ SG_ 1301 ObjWidth_10"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1301 ObjHeadAngle_10"朝向，顺时针为正";
+CM_ SG_ 1301 Objtype_10"类别";
+CM_ SG_ 1302 ObjLatDis_11"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1302 ObjLongDis_11"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1302 ObjLatSpd_11"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1302 ObjLongSpd_11"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1303 ObjLength_11"长，纵向x，横向y，左负右正";
+CM_ SG_ 1303 ObjWidth_11"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1303 ObjHeadAngle_11"朝向，顺时针为正";
+CM_ SG_ 1303 Objtype_11"类别";
+CM_ SG_ 1304 ObjLatDis_12"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1304 ObjLongDis_12"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1304 ObjLatSpd_12"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1304 ObjLongSpd_12"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1305 ObjLength_12"长，纵向x，横向y，左负右正";
+CM_ SG_ 1305 ObjWidth_12"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1305 ObjHeadAngle_12"朝向，顺时针为正";
+CM_ SG_ 1305 Objtype_12"类别";
+CM_ SG_ 1306 ObjLatDis_13"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1306 ObjLongDis_13"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1306 ObjLatSpd_13"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1306 ObjLongSpd_13"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1307 ObjLength_13"长，纵向x，横向y，左负右正";
+CM_ SG_ 1307 ObjWidth_13"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1307 ObjHeadAngle_13"朝向，顺时针为正";
+CM_ SG_ 1307 Objtype_13"类别";
+CM_ SG_ 1308 ObjLatDis_14"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1308 ObjLongDis_14"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1308 ObjLatSpd_14"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1308 ObjLongSpd_14"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1309 ObjLength_14"长，纵向x，横向y，左负右正";
+CM_ SG_ 1309 ObjWidth_14"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1309 ObjHeadAngle_14"朝向，顺时针为正";
+CM_ SG_ 1309 Objtype_14"类别";
+CM_ SG_ 1310 ObjLatDis_15"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1310 ObjLongDis_15"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1310 ObjLatSpd_15"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1310 ObjLongSpd_15"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1311 ObjLength_15"长，纵向x，横向y，左负右正";
+CM_ SG_ 1311 ObjWidth_15"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1311 ObjHeadAngle_15"朝向，顺时针为正";
+CM_ SG_ 1311 Objtype_15"类别";
+CM_ SG_ 1312 ObjLatDis_16"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1312 ObjLongDis_16"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1312 ObjLatSpd_16"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1312 ObjLongSpd_16"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1313 ObjLength_16"长，纵向x，横向y，左负右正";
+CM_ SG_ 1313 ObjWidth_16"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1313 ObjHeadAngle_16"朝向，顺时针为正";
+CM_ SG_ 1313 Objtype_16"类别";
+CM_ SG_ 1314 ObjLatDis_17"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1314 ObjLongDis_17"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1314 ObjLatSpd_17"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1314 ObjLongSpd_17"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1315 ObjLength_17"长，纵向x，横向y，左负右正";
+CM_ SG_ 1315 ObjWidth_17"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1315 ObjHeadAngle_17"朝向，顺时针为正";
+CM_ SG_ 1315 Objtype_17"类别";
+CM_ SG_ 1316 ObjLatDis_18"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1316 ObjLongDis_18"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1316 ObjLatSpd_18"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1316 ObjLongSpd_18"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1317 ObjLength_18"长，纵向x，横向y，左负右正";
+CM_ SG_ 1317 ObjWidth_18"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1317 ObjHeadAngle_18"朝向，顺时针为正";
+CM_ SG_ 1317 Objtype_18"类别";
+CM_ SG_ 1318 ObjLatDis_19"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1318 ObjLongDis_19"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1318 ObjLatSpd_19"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1318 ObjLongSpd_19"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1319 ObjLength_19"长，纵向x，横向y，左负右正";
+CM_ SG_ 1319 ObjWidth_19"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1319 ObjHeadAngle_19"朝向，顺时针为正";
+CM_ SG_ 1319 Objtype_19"类别";
+CM_ SG_ 1320 ObjLatDis_20"横向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1320 ObjLongDis_20"纵向相对距离，纵向x，横向y，左负右正";
+CM_ SG_ 1320 ObjLatSpd_20"横向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1320 ObjLongSpd_20"纵向相对速度，纵向x，横向y，左负右正";
+CM_ SG_ 1321 ObjLength_20"长，纵向x，横向y，左负右正";
+CM_ SG_ 1321 ObjWidth_20"宽，纵向x，横向y，左负右正";
+CM_ SG_ 1321 ObjHeadAngle_20"朝向，顺时针为正";
+CM_ SG_ 1321 Objtype_20"类别";
+CM_ SG_ 2017 BrgStop_b"激光距离吊的纵向距离";
+CM_ SG_ 2017 BrgStop_ID"吊的编号";
+CM_ SG_ 2017 Brgstop_counter"每周期+1,0-15循环";
+CM_ SG_ 2017 BrgStop_flag"是否识别到吊？";
+CM_ SG_ 2018 Container_dis1"前集装箱距离";
+CM_ SG_ 2018 Container_dis2"后集装箱距离";
+CM_ SG_ 2019 trailer_k"挂车角度，左负右正";
+CM_ SG_ 2019 trailer_flag"挂车角度是否有效？";
+CM_ SG_ 2019 Trailer_counter"每周期+1,0-15循环";
+CM_ SG_ 2022 LLine_posy"y轴截距，纵向x，横向y，左正右负，逆时针为正";
+CM_ SG_ 2022 LLine_HA"夹角，纵向x，横向y，左正右负，逆时针为正";
+CM_ SG_ 2022 LLine_counter"每周期+1,0-15循环";
+CM_ SG_ 2022 LLine_type"道路边界类型";
+CM_ SG_ 2023 RLine_posy"y轴截距，纵向x，横向y，左正右负，逆时针为正";
+CM_ SG_ 2023 RLine_HA"夹角，纵向x，横向y，左正右负，逆时针为正";
+CM_ SG_ 2023 RLine_counter"每周期+1,0-15循环";
+CM_ SG_ 2023 RLine_type"道路边界类型";
+CM_ SG_ 2024 polePoint_posx"x坐标，纵向x，横向y，左正右负，逆时针为正";
+CM_ SG_ 2024 polePoint_posy"y坐标，纵向x，横向y，左正右负，逆时针为正";
+CM_ SG_ 2024 polePoint_HA"航向，纵向x，横向y，左正右负，逆时针为正";
+CM_ SG_ 2024 polePoint_counter"每周期+1,0-15循环";
+CM_ SG_ 2024 polePoint_type"纵向修正类型";
+CM_ SG_ 2027 BrgStop_Dis"距离吊的估计距离";
+CM_ SG_ 2027 carVx"当前车速";
+CM_ SG_ 2027 carStrAng"方向盘转角，左正右负";
+CM_ SG_ 2027 car_yawrate"横摆角速度，左正右负";
+CM_ SG_ 2027 ADU_counter"每周期+1,0-15循环";
+CM_ SG_ 2566831883 FrontAxleSpeed"前轴轴速";
+CM_ SG_ 2566831883 RelativeSpeedFrontAxleLeftWheel"左前轮相对于前轴的轮速";
+CM_ SG_ 2566831883 RlativeSpeedFrontAxleRightWheel"右前轮相对于前轴的轮速";
+CM_ SG_ 2566831883 RelativeSpeedRearAxle1LeftWheel"左后轮相对于前轴的轮速";
+CM_ SG_ 2566831883 RlativeSpeedRearAxle1RightWheel"右后轮相对于前轴的轮速";
+BA_DEF_ SG_  "SignalType" STRING; 
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 100000;
+BA_DEF_DEF_  "SignalType" "";
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_ "GenMsgCycleTime" BO_ 2163251494 1000;
+BA_ "GenMsgCycleTime" BO_ 773 20;
+BA_ "GenMsgCycleTime" BO_ 2003 1000;
+BA_ "GenMsgCycleTime" BO_ 2005 1000;
+BA_ "GenMsgCycleTime" BO_ 2007 100;
+BA_ "GenMsgCycleTime" BO_ 2047 1000;
+BA_ "GenMsgCycleTime" BO_ 771 20;
+BA_ "GenMsgCycleTime" BO_ 2684291074 100;
+BA_ "GenMsgCycleTime" BO_ 2684291075 100;
+BA_ "GenMsgCycleTime" BO_ 1024 100;
+BA_ "GenMsgCycleTime" BO_ 1280 100;
+BA_ "GenMsgCycleTime" BO_ 1281 100;
+BA_ "GenMsgCycleTime" BO_ 1282 100;
+BA_ "GenMsgCycleTime" BO_ 1283 100;
+BA_ "GenMsgCycleTime" BO_ 1284 100;
+BA_ "GenMsgCycleTime" BO_ 1285 100;
+BA_ "GenMsgCycleTime" BO_ 1286 100;
+BA_ "GenMsgCycleTime" BO_ 1287 100;
+BA_ "GenMsgCycleTime" BO_ 1288 100;
+BA_ "GenMsgCycleTime" BO_ 1289 100;
+BA_ "GenMsgCycleTime" BO_ 1290 100;
+BA_ "GenMsgCycleTime" BO_ 1291 100;
+BA_ "GenMsgCycleTime" BO_ 1292 100;
+BA_ "GenMsgCycleTime" BO_ 1293 100;
+BA_ "GenMsgCycleTime" BO_ 1294 100;
+BA_ "GenMsgCycleTime" BO_ 1295 100;
+BA_ "GenMsgCycleTime" BO_ 1296 100;
+BA_ "GenMsgCycleTime" BO_ 1297 100;
+BA_ "GenMsgCycleTime" BO_ 1298 100;
+BA_ "GenMsgCycleTime" BO_ 1299 100;
+BA_ "GenMsgCycleTime" BO_ 1300 100;
+BA_ "GenMsgCycleTime" BO_ 1301 100;
+BA_ "GenMsgCycleTime" BO_ 1302 100;
+BA_ "GenMsgCycleTime" BO_ 1303 100;
+BA_ "GenMsgCycleTime" BO_ 1304 100;
+BA_ "GenMsgCycleTime" BO_ 1305 100;
+BA_ "GenMsgCycleTime" BO_ 1306 100;
+BA_ "GenMsgCycleTime" BO_ 1307 100;
+BA_ "GenMsgCycleTime" BO_ 1308 100;
+BA_ "GenMsgCycleTime" BO_ 1309 100;
+BA_ "GenMsgCycleTime" BO_ 1310 100;
+BA_ "GenMsgCycleTime" BO_ 1311 100;
+BA_ "GenMsgCycleTime" BO_ 1312 100;
+BA_ "GenMsgCycleTime" BO_ 1313 100;
+BA_ "GenMsgCycleTime" BO_ 1314 100;
+BA_ "GenMsgCycleTime" BO_ 1315 100;
+BA_ "GenMsgCycleTime" BO_ 1316 100;
+BA_ "GenMsgCycleTime" BO_ 1317 100;
+BA_ "GenMsgCycleTime" BO_ 1318 100;
+BA_ "GenMsgCycleTime" BO_ 1319 100;
+BA_ "GenMsgCycleTime" BO_ 1320 100;
+BA_ "GenMsgCycleTime" BO_ 1321 100;
+BA_ "GenMsgCycleTime" BO_ 2017 100;
+BA_ "GenMsgCycleTime" BO_ 2018 100;
+BA_ "GenMsgCycleTime" BO_ 2019 100;
+BA_ "GenMsgCycleTime" BO_ 2022 100;
+BA_ "GenMsgCycleTime" BO_ 2023 100;
+BA_ "GenMsgCycleTime" BO_ 2024 100;
+BA_ "GenMsgCycleTime" BO_ 2027 100;
+BA_ "GenMsgCycleTime" BO_ 1792 100;
+BA_ "GenMsgCycleTime" BO_ 1793 100;
+BA_ "GenMsgCycleTime" BO_ 1794 100;
+BA_ "GenMsgCycleTime" BO_ 1795 100;
+BA_ "GenMsgCycleTime" BO_ 1796 100;
+BA_ "GenMsgCycleTime" BO_ 1797 100;
+BA_ "GenMsgCycleTime" BO_ 1798 100;
+BA_ "GenMsgCycleTime" BO_ 1799 100;
+BA_ "GenMsgCycleTime" BO_ 1800 100;
+BA_ "GenMsgCycleTime" BO_ 1801 100;
+BA_ "GenMsgCycleTime" BO_ 1802 100;
+BA_ "GenMsgCycleTime" BO_ 1803 100;
+BA_ "GenMsgCycleTime" BO_ 1804 100;
+BA_ "GenMsgCycleTime" BO_ 1805 100;
+BA_ "GenMsgCycleTime" BO_ 1806 100;
+BA_ "GenMsgCycleTime" BO_ 1807 100;
+BA_ "GenMsgCycleTime" BO_ 1808 100;
+BA_ "GenMsgCycleTime" BO_ 1809 100;
+BA_ "GenMsgCycleTime" BO_ 1810 100;
+BA_ "GenMsgCycleTime" BO_ 1811 100;
+BA_ "GenMsgCycleTime" BO_ 1812 100;
+BA_ "GenMsgCycleTime" BO_ 1813 100;
+BA_ "GenMsgCycleTime" BO_ 1814 100;
+BA_ "GenMsgCycleTime" BO_ 1815 100;
+BA_ "GenMsgCycleTime" BO_ 1816 100;
+BA_ "GenMsgCycleTime" BO_ 1817 100;
+BA_ "GenMsgCycleTime" BO_ 1818 100;
+BA_ "GenMsgCycleTime" BO_ 1819 100;
+BA_ "GenMsgCycleTime" BO_ 1820 100;
+BA_ "GenMsgCycleTime" BO_ 1821 100;
+BA_ "GenMsgCycleTime" BO_ 1822 100;
+BA_ "GenMsgCycleTime" BO_ 1823 100;
+BA_ "GenMsgCycleTime" BO_ 1824 100;
+BA_ "GenMsgCycleTime" BO_ 1825 100;
+BA_ "GenMsgCycleTime" BO_ 1826 100;
+BA_ "GenMsgCycleTime" BO_ 1827 100;
+BA_ "GenMsgCycleTime" BO_ 1828 100;
+BA_ "GenMsgCycleTime" BO_ 1829 100;
+BA_ "GenMsgCycleTime" BO_ 1830 100;
+BA_ "GenMsgCycleTime" BO_ 1831 100;
+BA_ "GenMsgCycleTime" BO_ 1832 100;
+BA_ "GenMsgCycleTime" BO_ 1833 100;
+BA_ "GenMsgCycleTime" BO_ 1834 100;
+BA_ "GenMsgCycleTime" BO_ 1835 100;
+BA_ "GenMsgCycleTime" BO_ 1836 100;
+BA_ "GenMsgCycleTime" BO_ 1837 100;
+BA_ "GenMsgCycleTime" BO_ 1838 100;
+BA_ "GenMsgCycleTime" BO_ 1839 100;
+BA_ "GenMsgCycleTime" BO_ 1840 100;
+BA_ "GenMsgCycleTime" BO_ 1841 100;
+BA_ "GenMsgCycleTime" BO_ 1842 100;
+BA_ "GenMsgCycleTime" BO_ 1843 100;
+BA_ "GenMsgCycleTime" BO_ 1844 100;
+BA_ "GenMsgCycleTime" BO_ 1845 100;
+BA_ "GenMsgCycleTime" BO_ 1846 100;
+BA_ "GenMsgCycleTime" BO_ 1847 100;
+BA_ "GenMsgCycleTime" BO_ 1848 100;
+BA_ "GenMsgCycleTime" BO_ 1849 100;
+BA_ "GenMsgCycleTime" BO_ 1850 100;
+BA_ "GenMsgCycleTime" BO_ 1851 100;
+BA_ "GenMsgCycleTime" BO_ 1852 100;
+BA_ "GenMsgCycleTime" BO_ 1537 40;
+BA_ "GenMsgCycleTime" BO_ 1539 40;
+BA_ "GenMsgCycleTime" BO_ 1540 40;
+BA_ "GenMsgCycleTime" BO_ 1541 40;
+BA_ "GenMsgCycleTime" BO_ 1542 40;
+BA_ "GenMsgCycleTime" BO_ 1543 40;
+BA_ "GenMsgCycleTime" BO_ 1544 40;
+BA_ "GenMsgCycleTime" BO_ 1545 40;
+BA_ "GenMsgCycleTime" BO_ 1546 40;
+BA_ "GenMsgCycleTime" BO_ 1547 40;
+BA_ "GenMsgCycleTime" BO_ 1548 40;
+BA_ "GenMsgCycleTime" BO_ 1549 40;
+BA_ "GenMsgCycleTime" BO_ 1550 40;
+BA_ "GenMsgCycleTime" BO_ 2565866791 100;
+BA_ "GenMsgCycleTime" BO_ 2566831883 100;
+VAL_ 2684291074 CAM_DiagFlag 0 "正常" 1 "eyeQ信号转发故障" 2 "eyeQ障碍物输出异常" 3 "eyeQ车道线输出异常" 4 "eyeQ数据卡死" 7 "eyeQ多项故障" ;
+VAL_ 2684291074 ESR_DiagFlag 0 "正常" 1 "ESR信号转发异常" 2 "ESR障碍物输出异常" 7 "ESR多项故障" ;
+VAL_ 2684291074 LiDARfs_DiagFlag 0 "正常" 1 "激光FS无输出" 2 "激光FS输出异常" ;
+VAL_ 2684291074 LiDARobject_DiagFlag 0 "正常" 1 "激光聚类无输出" 2 "激光障碍物输出异常" ;
+VAL_ 2684291074 LidarLeft_state 0 "左激光正常" 1 "左激光异常" ;
+VAL_ 2684291074 LidarRight_state 0 "右激光正常" 1 "右激光异常" ;
+VAL_ 2684291074 LidarUp_state 0 "上激光正常" 1 "上激光异常" ;
+VAL_ 2684291074 LidarRear_state 0 "单线激光正常" 1 "单线激光异常" ;
+VAL_ 2684291074 LidarFront2_state 0 "右中激光正常" 1 "右中激光异常" ;
+VAL_ 2684291074 LidarFront1_state 0 "左中激光正常" 1 "左中激光异常" ;
+VAL_ 2684291075 navi_pathRec_err 0 "正常" 1 "路径接收错误" ;
+VAL_ 2684291075 navi_work_err 0 "正常" 1 "作业中" ;
+VAL_ 2684291075 navi_pathFinish_err 0 "正常" 1 "路径更新未完成" ;
+VAL_ 2684291075 navi_mass_err 0 "正常" 1 "后台下发载荷错误" ;
+VAL_ 2684291075 endpoint_diag 0 "正常" 1 "终点不在路径上" ;
+VAL_ 2684291075 navi_tboxonline 0 "正常" 1 "TBOX4G掉线" ;
+VAL_ 2684291075 navi_tboxbusoff 0 "正常" 1 "TBOX总线没信号" ;
+VAL_ 2684291075 navirepeatPoint 0 "正常" 1 "路径点发送有重复" ;
+VAL_ 2684291075 naviMap_State 0 "后台" 1 "本地" ;
+VAL_ 2684291075 ContainerDis_diag 0 "正常" 1 "单线激光识别异常" ;
+VAL_ 2684291075 brgstop_diag 0 "正常" 1 "激光识别吊中" ;
+VAL_ 2684291075 naviEnable_err 0 "正常" 1 "导航未激活" ;
+VAL_ 2684291075 naviInit_diagnosis 0 "正常" 1 "车辆不在路径上" ;
+VAL_ 2684291075 navi_GymGnt_Flag 0 "正常" 1 "车辆运行超出路径范围" 2 "当前路径太稀疏" 3 "路径点生成异常" ;
+VAL_ 2684291075 LctVeh_st_err 0 "正常" 1 "轮速信号异常" 2 "方向盘转角信号异常" 4 "行驶方向异常" ;
+VAL_ 2684291075 LctGPS_st_err 0 "正常" 1 "GPS信号未更新" 2 "GPS信号异常" 4 "GPS未连接4G" ;
+VAL_ 2684291075 LctCAM_st_err 0 "正常" 1 "摄像头信号未更新" 2 "摄像头输出值异常" 4 "摄像头非正常工作状态" ;
+VAL_ 2684291075 LctLidar_st_err 0 "正常" 1 "lider信号未更新" 2 "lider输出值异常" 4 "预留" ;
+VAL_ 2684291075 LocationFusion_err 0 "正常" 1 "融合定位失效" 2 "定位自检中" 4 "预留" ;
+VAL_ 2684291075 ADU_Drive_err 0 "正常" 1 "VCU故障不响应" ;
+VAL_ 2684291075 ADU_Steer_err 0 "正常" 1 "当前EPS状态异常" 2 "CANBUS_OFF" 3 "状态异常且busoff" ;
+VAL_ 2684291075 ADU_Brake_Diag 0 "正常" 1 "EBS报黄灯" 2 "EBS报红灯" 4 "EBS温度超限" 8 "EBS制动不响应" ;
+VAL_ 2684291075 TargetVx0 0 "正常" 1 "诊断目标车速为0" 2 "任务导航未激活" 4 "横向控制未激活" 8 "导航目标车速为0" ;
+VAL_ 2684291075 ADU_OFF_Diag 0 "正常" 1 "刹车被踩下" 2 "油门被踩下" 4 "TBox_控制关闭" 8 "远程驾驶关闭" ;
+VAL_ 2684291075 outRoadEdge 0 "正常" 1 "偏离路径50cm" ;
+VAL_ 2684291075 outpath 0 "正常" 1 "偏离路30cm" ;
+VAL_ 2017 BrgStop_flag 0 "无效" 1 "有效" ;
+VAL_ 2018 dis2_flag 0 "无效" 1 "有效" ;
+VAL_ 2018 dis1_flag 0 "无效" 1 "有效" ;
+VAL_ 2019 trailer_flag 0 "无效" 1 "有效" ;
+VAL_ 2022 LLine_type 0 "无效" 1 "石墩" 2 "护栏" 3 "吊侧面" ;
+VAL_ 2023 RLine_type 0 "无效" 1 "石墩" 2 "护栏" 3 "吊侧面" ;
+VAL_ 2024 polePoint_type 0 "无效" 1 "杆牌" ;
+VAL_ 1792 LidarLeft_state 0 "左激光正常" 1 "左激光异常" ;
+VAL_ 1792 LidarRight_state 0 "右激光正常" 1 "右激光异常" ;
+VAL_ 1792 LidarUp_state 0 "上激光正常" 1 "上激光异常" ;
+VAL_ 1792 LidarRear_state 0 "单线激光正常" 1 "单线激光异常" ;
+VAL_ 1792 LidarFront2_state 0 "右中激光正常" 1 "右中激光异常" ;
+VAL_ 1792 LidarFront1_state 0 "左中激光正常" 1 "左中激光异常" ;
+VAL_ 1542 INS_statue 0 "无" 1 "姿态初始化" 2 "组合导航" ;
+VAL_ 2565866791 CurrentGear 0 "N档" 98 "R档" 127 "D档" ;

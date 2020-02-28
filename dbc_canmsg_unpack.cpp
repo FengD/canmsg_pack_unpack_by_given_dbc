@@ -53,7 +53,7 @@ int unpackCanmsg (const Message &m, const Canmsg &msg, const size_t valueSize, d
     printf("value given error\n");
     return SIGNAL_SIZE_MISMATCH;
   }
-  // double check the id and the length
+   // double check the id and the length
   if (m.id != msg.id) {
     printf("canmsg id mismatch, %ld need but %ld given\n", m.id, msg.id);
     return UNPACK_ID_MISMATCH;
@@ -73,18 +73,18 @@ int unpackCanmsg (const Message &m, const Canmsg &msg, const size_t valueSize, d
 }
 
 real64_T unpackSignal (const Signal &s, const uint8_T *data) {
-  // --------------- START Unpacking Signal ------------------
-  //   startBit                = s.startBit
-  //   length                  = s.length
-  //   desiredSignalByteLayout = s.dataType
-  //   dataType                = s.is_unsigned
-  //   factor                  = s.factor
-  //   offset                  = s.offset
-  //  -----------------------------------------------------------------------
+   // --------------- START Unpacking Signal ------------------
+   //   startBit                = s.startBit
+   //   length                  = s.length
+   //   desiredSignalByteLayout = s.dataType
+   //   dataType                = s.is_unsigned
+   //   factor                  = s.factor
+   //   offset                  = s.offset
+   //  -----------------------------------------------------------------------
 
   int startBit = s.startBit;
   {
-    // if the motolora type <BEGENDIAN> the startbit needs to be recalculated
+     // if the motolora type <BEGENDIAN> the startbit needs to be recalculated
     if (!s.dataType) {
       int tmp1 = startBit / 8;
       int tmp2 = tmp1 * 8 + 7 - (startBit % 8) + s.length - 1;
@@ -134,4 +134,4 @@ real64_T unpackSignal (const Signal &s, const uint8_T *data) {
 
   return result;
 }
-} // namespace can_util
+}  // namespace can_util

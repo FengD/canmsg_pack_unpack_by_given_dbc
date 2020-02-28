@@ -1,7 +1,7 @@
 VERSION ""
 
 
-NS_ : 
+NS_ :
 	NS_DESC_
 	CM_
 	BA_DEF_
@@ -39,17 +39,21 @@ BU_:
 BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ counter : 0|16@0+ (1,0) [0|65535] "" Vector__XXX
 
+
+
+
 BO_ 2047 endPoint: 8 Vector__XXX
  SG_ endYaw : 51|12@0+ (0.1,0) [0|409.5] "deg" Vector__XXX
  SG_ endY : 29|26@0- (0.01,0) [-335544.32|335544.31] "m" Vector__XXX
  SG_ endX : 7|26@0- (0.01,0) [-335544.32|335544.31] "m" Vector__XXX
 
+
+
+ 
 BO_ 2021 car_XY: 8 Vector__XXX
  SG_ caryaw : 51|12@0+ (0.1,0) [0|409.5] "deg" Vector__XXX
  SG_ cary : 29|26@0- (0.01,0) [-335544.32|335544.31] "m" Vector__XXX
  SG_ carx : 7|26@0- (0.01,0) [-335544.32|335544.31] "m" Vector__XXX
-
-
 
 CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
 BA_DEF_  "BusType" STRING ;
@@ -66,4 +70,3 @@ BA_DEF_DEF_  "CANoeJitterMax" 0;
 BA_DEF_DEF_  "CANoeJitterMin" 0;
 BA_DEF_DEF_  "CANoeDrift" 0;
 BA_DEF_DEF_  "CANoeStartDelay" 0;
-

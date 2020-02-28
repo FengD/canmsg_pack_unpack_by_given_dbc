@@ -25,23 +25,25 @@ class DbcAnalysis {
   DbcAnalysis(const DbcAnalysis&);
   DbcAnalysis& operator=(const DbcAnalysis&);
   void transformMessageFromLine(std::string line, Message& m);
- 	void transformSignalFromLine(std::string line, Message &m);
- 	void getPosInfoTypeUnsignedFromStr(std::string str, Signal &s);
- 	void getFactorOffsetFromStr(std::string str, Signal &s);
- 	void getMaxMinFromStr(std::string str, Signal &s);
- 	void getUnitFromStr(std::string str, Signal &s);
-	std::map<long, Message> messages_;
-	std::vector<std::string> files_;
-  static DbcAnalysis* instance;
-  static pthread_mutex_t mutex;
+  void transformSignalFromLine(std::string line, Message &m);
+  void getPosInfoTypeUnsignedFromStr(std::string str, Signal &s);
+  void getFactorOffsetFromStr(std::string str, Signal &s);
+  void getMaxMinFromStr(std::string str, Signal &s);
+  void getUnitFromStr(std::string str, Signal &s);
+  void analysisMessage(std::string line);
+  std::map<long, Message> messages_;
+  std::vector<std::string> files_;
+  static DbcAnalysis* instance_;
+  static pthread_mutex_t mutex_;
+  std::ifstream in_;
 
  public:
   static DbcAnalysis *getInstance();
-	void printMessages();
-	void analysisFiles();
-	void addOneDbcFile(const std::string &filePath);
-	std::map<long, Message>& getMessages();
+  void printMessages();
+  void analysisFiles();
+  void addOneDbcFile(const std::string &filePath);
+  std::map<long, Message>& getMessages();
 };
-} // namespace dbc_analysis
+}  // namespace dbc_analysis
 
-#endif //_DBC_FILE_ANALYSIS_H_
+#endif  //_DBC_FILE_ANALYSIS_H_

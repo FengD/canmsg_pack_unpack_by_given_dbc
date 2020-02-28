@@ -24,38 +24,38 @@ typedef float real32_T;
 typedef double real64_T;
 
 struct Signal {
-	std::string name;
-	int startBit;
-	int length;
-	float factor;
-	float offset;
-	float maximum;
-	float minimum;
-	int dataType;
-	int is_unsigned;
-	std::string unit;
+  std::string name;
+  int startBit;
+  int length;
+  float factor;
+  float offset;
+  float maximum;
+  float minimum;
+  int dataType;
+  int is_unsigned;
+  std::string unit;
 
-	bool operator <(const Signal& s) const // 升序排序时必须写的函数
+  bool operator <(const Signal& s) const  // 升序排序时必须写的函数
   {
       return startBit < s.startBit;
   }
-  bool operator >(const Signal& s) const // 降序排序时必须写的函数
+  bool operator >(const Signal& s) const  // 降序排序时必须写的函数
   {
       return startBit > s.startBit;
   }
 };
 
 struct Message {
-	long id;
-	std::string name;
-	int length;
-	std::vector<Signal> signals;
+  long id;
+  std::string name;
+  int length;
+  std::vector<Signal> signals;
 
-	bool operator <(const Message& msg) const // 升序排序时必须写的函数
+  bool operator <(const Message& msg) const  // 升序排序时必须写的函数
   {
       return id < msg.id;
   }
-  bool operator >(const Message& msg) const // 降序排序时必须写的函数
+  bool operator >(const Message& msg) const  // 降序排序时必须写的函数
   {
       return id > msg.id;
   }
@@ -68,10 +68,10 @@ struct Canmsg {
 };
 
 enum PackUnpackStat {
-	SIGNAL_SIZE_MISMATCH = -3,
-	UNPACK_ID_MISMATCH = -2,
-	UNPACK_LENGTH_MISMATCH = -1,
-	PACK_UNPACK_SUCCESS = 0
+  SIGNAL_SIZE_MISMATCH = -3,
+  UNPACK_ID_MISMATCH = -2,
+  UNPACK_LENGTH_MISMATCH = -1,
+  PACK_UNPACK_SUCCESS = 0
 };
 
-#endif //_CANMSG_DEFINE_H_
+#endif  //_CANMSG_DEFINE_H_

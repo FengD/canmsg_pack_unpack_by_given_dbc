@@ -35,16 +35,16 @@ std::map<long, Message>& getMessages();
 >> Unpack the can message to values.
 ``` c++
 /** the dbc unpack used to transform the can msg to value
-* @param in [struct Message] the message that you want to unpack
-* @param in [struct Canmsg] the canmsg
-* @param in [unsigned int] the size of the value list
+* @param in_ [struct Message] the message that you want to unpack
+* @param in_ [struct Canmsg] the canmsg
+* @param in_ [unsigned int] the size of the value list
 * @param out [double array] the array of the values
 */
 void unpackCanmsg (const Message &m, const Canmsg &msg, const size_t valueSize, double *value);
 /**
 * pack one Signal
-* @param in [struct Signal] the Signal that you want to unpack
-* @param in [unsigned char array] the data array of the can msg
+* @param in_ [struct Signal] the Signal that you want to unpack
+* @param in_ [unsigned char array] the data array of the can msg
 * @return [double] the value that you unpack from the Signal
 */
 real64_T unpackSignal (const Signal &s, const uint8_T *data);
@@ -54,16 +54,16 @@ real64_T unpackSignal (const Signal &s, const uint8_T *data);
 >> Pack the value to can message.
 ``` c++
 /** the dbc pack used to transform the value to can msg
-* @param in [struct Message] the message that you want to pack
-* @param in [unsigned int] the size of the value list
-* @param in [float array] the array of the values
+* @param in_ [struct Message] the message that you want to pack
+* @param in_ [unsigned int] the size of the value list
+* @param in_ [float array] the array of the values
 * @param out [struct Canmsg] the canmsg
 */
 void packCanmsg (const Message &m, const size_t &valueSize, const double *value, Canmsg *msg);
 /**
 * pack one Signal
-* @param in [struct Signal] the Signal that you want to pack
-* @param in [double] the value that you want to pack in the Signal
+* @param in_ [struct Signal] the Signal that you want to pack
+* @param in_ [double] the value that you want to pack in_ the Signal
 * @param out [unsigned char array] the data array of the can msg
 */
 void packSignal (const Signal &s, const double &value, uint8_T *data);

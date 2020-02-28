@@ -38,9 +38,9 @@ int main() {
   }
 
   dbc_analysis::DbcAnalysis::getInstance()->analysisFiles();
-  // dbc_analysis::DbcAnalysis::getInstance()->printMessages();
+  dbc_analysis::DbcAnalysis::getInstance()->printMessages();
 
-  double valueOut1[3];
+  /*double valueOut1[3];
   Canmsg test;
   test.id = 2021;
   test.length = 8;
@@ -61,7 +61,7 @@ int main() {
   double valueIn1[3] = {-1, -2, 400};
   Canmsg msg = {0};
   valuesPack(2021, 3, valueIn1, &msg);
-  msgPrint(msg);
+  msgPrint(msg);*/
 
   return 0;
 }
