@@ -27,10 +27,10 @@ struct Signal {
   std::string name;
   int startBit;
   int length;
-  float factor;
-  float offset;
-  float maximum;
-  float minimum;
+  double factor;
+  double offset;
+  double maximum;
+  double minimum;
   int dataType;
   int is_unsigned;
   std::string unit;
